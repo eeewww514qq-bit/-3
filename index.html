@@ -36,30 +36,11 @@
             align-items: center;  /* 居中内容 */
         }
 
-        /* 添加渐显的动画 */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        /* 定义渐显的动画 */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px); /* 使元素从下方滑动 */
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         h1 {
             color: #fff;
             margin-top: 10px; /* 减少顶部间距，文字和按钮更接近 */
             font-size: 36px; /* 调整为三分之一 */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* 为标题加上阴影效果 */
-            animation-delay: 0.2s; /* 延迟显示 */
         }
 
         .button-container {
@@ -70,7 +51,6 @@
             max-width: 400px; /* 设置按钮容器的最大宽度，避免按钮过大 */
             margin-top: 30px; /* 减少按钮与标题的间距 */
             margin-bottom: 20px; /* 增加底部间距，避免按钮与屏幕底部太近 */
-            animation-delay: 0.5s; /* 延迟显示 */
         }
 
         .button {
@@ -93,7 +73,6 @@
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* 为按钮文字加上阴影 */
             padding-left: 20px; /* 为文字和按钮左边增加一点间距 */
             padding-right: 20px; /* 为右侧的GO按钮加一点间距 */
-            animation-delay: 1s; /* 延迟显示 */
         }
 
         .button:hover {
@@ -126,13 +105,12 @@
             font-style: italic; /* 让 GO 字体变成斜体，增加设计感 */
             letter-spacing: 1px; /* 适当的字间距，让它更明显 */
         }
-
     </style>
 </head>
 <body>
     <div class="background"></div> <!-- 固定背景图层 -->
-    <h1 class="fade-in">永久总站</h1>
-    <div class="button-container fade-in">
+    <h1>永久总站</h1>
+    <div class="button-container">
         <div class="button button1" data-url="http://p58c.cc">
             <span>1号通道</span>
             <span class="go-text">GO></span>
@@ -156,11 +134,16 @@
     </div>
 
     <script>
-        // 给每个按钮添加点击事件
-        document.querySelectorAll('.button').forEach(button => {
-            button.addEventListener('click', () => {
-                const url = button.getAttribute('data-url');
-                window.location.href = url; // 或者使用 window.open(url) 来新标签页打开
+        // 禁用右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // 禁用右键菜单
+        });
+
+        // 给每个按钮添加点击事件，触发跳转
+        document.querySelectorAll('.button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var url = button.getAttribute('data-url');
+                window.open(url, '_blank'); // 通过 JavaScript 跳转到链接
             });
         });
     </script>
