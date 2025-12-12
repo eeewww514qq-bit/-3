@@ -127,32 +127,6 @@
             letter-spacing: 1px; /* 适当的字间距，让它更明显 */
         }
 
-        /* 底部图片容器 */
-        .image-link {
-            margin-top: 30px; /* 与最后一个按钮保持一定的固定距离 */
-            padding-bottom: 20px; /* 让图片距离底部有一定空间 */
-            width: 100%;
-            text-align: center;
-            animation: fadeIn 1s ease-in-out forwards; /* 直接应用 fadeIn 动画 */
-            animation-delay: 1.2s; /* 减少延迟 */
-        }
-
-        .image-link img {
-            width: 100%;
-            max-width: 320px; /* 设置图片的最大宽度 */
-            height: auto; /* 自动调整高度 */
-            aspect-ratio: 2 / 1; /* 设置纵横比，宽度是高度的两倍 */
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s ease; /* 添加点击时的动画效果 */
-            animation: fadeIn 1s ease-in-out forwards; /* 为图片应用渐显动画 */
-            animation-delay: 1.2s; /* 与容器延迟相同 */
-        }
-
-        .image-link img:hover {
-            transform: scale(1.05); /* 悬停时放大效果 */
-        }
-
     </style>
 </head>
 <body>
@@ -181,6 +155,14 @@
         </div>
     </div>
 
-    <!-- 底部的可点击图片 -->
-    <div class="image-link fade-in">
-        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEMgNxpOvkbwYbn3qMs5swq9wxgYCKtLgADJQACbfXYVWB1
+    <script>
+        // 给每个按钮添加点击事件
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', () => {
+                const url = button.getAttribute('data-url');
+                window.location.href = url; // 或者使用 window.open(url) 来新标签页打开
+            });
+        });
+    </script>
+</body>
+</html>
