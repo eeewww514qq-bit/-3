@@ -105,6 +105,42 @@
             font-style: italic; /* 让 GO 字体变成斜体，增加设计感 */
             letter-spacing: 1px; /* 适当的字间距，让它更明显 */
         }
+
+        /* 悬浮客服按钮样式 */
+        .floating-chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000; /* 确保按钮位于最上层 */
+        }
+
+        .chat-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* 按钮大小 */
+            height: 60px;
+            background-color: #FF4081; /* 按钮颜色 */
+            border-radius: 50%; /* 圆形 */
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-button:hover {
+            background-color: #F50057; /* 鼠标悬停时的颜色 */
+        }
+
+        /* 可选：为按钮内文字添加样式 */
+        .chat-button span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -131,6 +167,13 @@
             <span>5号通道</span>
             <span class="go-text">GO></span>
         </div>
+    </div>
+
+    <!-- 悬浮客服按钮 -->
+    <div class="floating-chat">
+        <a href="https://example.com/customer-service" target="_blank" class="chat-button">
+            <span>客服</span>
+        </a>
     </div>
 
     <script>
