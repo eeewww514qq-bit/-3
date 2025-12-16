@@ -43,6 +43,15 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* 为标题加上阴影效果 */
         }
 
+        /* 设置金黄色小字 */
+        .sub-text {
+            color: #FFD700; /* 金黄色 */
+            font-size: 16px; /* 较小的字体 */
+            margin-top: 10px; /* 增加与标题的间距 */
+            font-style: italic; /* 斜体 */
+            letter-spacing: 1px; /* 增加字间距 */
+        }
+
         /* 修改按钮容器的样式，使按钮在一行显示 */
         .button-container {
             display: flex;
@@ -127,6 +136,10 @@
 <body>
     <div class="background"></div> <!-- 固定背景图层 -->
     <h1>永久总站</h1>
+
+    <!-- 金黄色的小字 -->
+    <p class="sub-text">欢迎来到我们的特别站点，点击进入体验精彩内容！</p> 
+
     <div class="button-container">
         <div class="button button1" data-url="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh">
             <span>1号通道</span>
@@ -172,4 +185,4 @@
     <!-- Tawk.to 客服代码 -->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function()
+    (function() {
