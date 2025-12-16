@@ -43,14 +43,16 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* 为标题加上阴影效果 */
         }
 
+        /* 修改按钮容器的样式，使按钮在一行显示 */
         .button-container {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap; /* 允许按钮换行 */
             gap: 20px;
             width: 100%;  /* 使按钮容器宽度为100% */
-            max-width: 400px; /* 设置按钮容器的最大宽度，避免按钮过大 */
+            max-width: 900px; /* 设置按钮容器的最大宽度，避免按钮过大 */
             margin-top: 30px; /* 减少按钮与标题的间距 */
             margin-bottom: 20px; /* 增加底部间距，避免按钮与屏幕底部太近 */
+            justify-content: center; /* 居中按钮 */
         }
 
         .button {
@@ -59,7 +61,7 @@
             align-items: center; /* 垂直居中 */
             color: white;
             padding: 15px 0; /* 增加按钮高度 */
-            width: 80%; /* 让按钮宽度为容器的80% */
+            width: calc(50% - 10px); /* 每行显示两个按钮 */
             max-width: 100%; /* 按钮最大宽度为容器宽度的100% */
             margin: 0 auto;
             text-align: left; /* 让文字左对齐 */
