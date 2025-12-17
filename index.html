@@ -100,27 +100,24 @@
         .go-green { color: #28a745; }
         .go-red { color: #dc3545; }
 
-        /* ★新增开始：左下角 QQ 加群按钮 */
+        /* ★新增：左下角 QQ 加群图片按钮 */
         .qq-group-btn {
             position: fixed;
             left: 20px;
-            bottom: 20px; /* 与右下角客服同高度 */
-            width: 46px;
-            height: 46px;
-            background: #12B7F5;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
+            bottom: 20px; /* 与右下角客服按钮对齐 */
             z-index: 9999;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            cursor: pointer;
         }
 
-        .qq-group-btn:hover {
+        .qq-group-btn img {
+            height: 60px; /* 控制按钮大小 */
+            width: auto;
+            display: block;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .qq-group-btn:hover img {
+            transform: scale(1.05);
             opacity: 0.9;
         }
         /* ★新增结束 */
@@ -144,10 +141,10 @@
         <div class="button button6" data-url="https://eeewww514qq-bit.github.io/im.qq.com/"><span>勉费白嫖</span><span class="go-text go-green">GO></span></div>
     </div>
 
-    <!-- ★新增开始：左下角 QQ 加群按钮 -->
+    <!-- ★新增：左下角 QQ 加群按钮（图片版） -->
     <div class="qq-group-btn"
          onclick="window.open('https://jq.qq.com/?_wv=1027&k=你的key', '_blank')">
-        QQ群
+        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEMwvxpQkYPE0WDYoYs5PGIZ4ZidBCjLgACPCIAAljPEVY-QdX4lYYyjjYE.png" alt="加入QQ群">
     </div>
     <!-- ★新增结束 -->
 
