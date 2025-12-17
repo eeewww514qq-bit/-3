@@ -67,115 +67,114 @@
             color: white;
             padding: 15px 0;
             width: calc(50% - 10px);
-            max-width: 100%;
-            margin: 0 auto;
-            text-align: left;
             font-size: 20px;
             border-radius: 12px;
-            transition: background-color 0.3s ease, opacity 0.3s ease;
             opacity: 0.9;
-            user-select: none;
             cursor: pointer;
             box-sizing: border-box;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
             padding-left: 20px;
             padding-right: 20px;
         }
 
-        .button:hover { opacity: 1; }
+        .button:hover {
+            opacity: 1;
+        }
 
-        .button1 { background-color: rgba(33,150,243,0.8); }
-        .button2 { background-color: rgba(3,169,244,0.8); }
-        .button3 { background-color: rgba(0,188,212,0.8); }
-        .button4 { background-color: rgba(63,81,181,0.8); }
-        .button5 { background-color: rgba(33,150,243,0.8); }
-        .button6 { background-color: rgba(128,0,128,0.8); }
+        .button1 { background-color: rgba(33, 150, 243, 0.8); }
+        .button2 { background-color: rgba(3, 169, 244, 0.8); }
+        .button3 { background-color: rgba(0, 188, 212, 0.8); }
+        .button4 { background-color: rgba(63, 81, 181, 0.8); }
+        .button5 { background-color: rgba(33, 150, 243, 0.8); }
+        .button6 { background-color: rgba(128, 0, 128, 0.8); }
 
         .go-text {
             font-size: 14px;
             font-style: italic;
-            letter-spacing: 1px;
         }
 
-        .go-green { color: #28a745; }
-        .go-red { color: #dc3545; }
-
-        /* ★新增：左下角 QQ 加群图片按钮 */
-        .qq-group-btn {
-            position: fixed;
-            left: 20px;
-            bottom: 20px; /* 与右下角客服按钮对齐 */
-            z-index: 9999;
-            cursor: pointer;
+        .go-green {
+            color: #28a745;
         }
 
-        .qq-group-btn img {
-            height: 60px; /* 控制按钮大小 */
-            width: auto;
-            display: block;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
+        /* ===== 左下角 QQ 群按钮（文字版，适合手机） ===== */
+.qq-group-btn {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #12B7F5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, opacity 0.2s ease;
 
-        .qq-group-btn:hover img {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-        /* ★新增结束 */
+    /* 文字样式 */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.qq-group-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
     </style>
 </head>
-
 <body>
-    <div class="background"></div>
-    <h1>永久总站</h1>
 
-    <p class="sub-text">
-        遇到打不开的情况更换浏览器访问本站即可解决，每个通道各有特色，点击进入体验精彩内容！
-    </p>
+<div class="background"></div>
 
-    <div class="button-container">
-        <div class="button button1" data-url="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh"><span>1号通道</span><span class="go-text go-green">GO></span></div>
-        <div class="button button2" data-url="http://6e8e.cc"><span>2号通道</span><span class="go-text go-green">GO></span></div>
-        <div class="button button3" data-url="http://chaxun.ccpiteco.net/?NVYtW&yi=ertgrvjfsuwooecqfx"><span>3号通道</span><span class="go-text go-green">GO></span></div>
-        <div class="button button4" data-url="http://hjgnx0nn.692z.cc"><span>4号通道</span><span class="go-text go-green">GO></span></div>
-        <div class="button button5" data-url="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75"><span>5号通道</span><span class="go-text go-green">GO></span></div>
-        <div class="button button6" data-url="https://eeewww514qq-bit.github.io/im.qq.com/"><span>勉费白嫖</span><span class="go-text go-green">GO></span></div>
-    </div>
+<h1>永久总站</h1>
+<p class="sub-text">遇到打不开的情况更换浏览器访问本站即可解决，每个通道各有特色，点击进入体验精彩内容！</p>
 
-    <!-- ★新增：左下角 QQ 加群按钮（图片版） -->
-    <div class="qq-group-btn"
-         onclick="window.open('https://jq.qq.com/?_wv=1027&k=你的key', '_blank')">
-        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEMw4dpQk0vKOwkJsmT_94aCHnvT2WIxwAC8SIAAljPEVbHhHFcZHuXFjYE.png" alt="加入QQ群">
-    </div>
-    <!-- ★新增结束 -->
+<div class="button-container">
+    <div class="button button1" data-url="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh"><span>1号通道</span><span class="go-text go-green">GO></span></div>
+    <div class="button button2" data-url="http://6e8e.cc"><span>2号通道</span><span class="go-text go-green">GO></span></div>
+    <div class="button button3" data-url="http://chaxun.ccpiteco.net/?NVYtW&yi=ertgrvjfsuwooecqfx"><span>3号通道</span><span class="go-text go-green">GO></span></div>
+    <div class="button button4" data-url="http://hjgnx0nn.692z.cc"><span>4号通道</span><span class="go-text go-green">GO></span></div>
+    <div class="button button5" data-url="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75"><span>5号通道</span><span class="go-text go-green">GO></span></div>
+    <div class="button button6" data-url="https://eeewww514qq-bit.github.io/im.qq.com/"><span>勉费白嫖</span><span class="go-text go-green">GO></span></div>
+</div>
 
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+<!-- 左下角 QQ 群按钮 -->
+<div class="qq-group-btn" id="qqGroupBtn" title="加入QQ群">
+    QQ群
+</div>
 
-        document.querySelectorAll('.button').forEach(function(button) {
-            button.addEventListener('click', function() {
-                window.open(button.getAttribute('data-url'), '_blank');
-            });
-        });
-    </script>
+<script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
 
-    <!-- Tawk.to 客服代码 -->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
+    document.querySelectorAll('.button').forEach(btn => {
+        btn.onclick = () => window.open(btn.dataset.url, '_blank');
+    });
 
-            Tawk_API.onLoad = function() {
-                Tawk_API.setLanguage('zh');
-            };
-        })();
-    </script>
+    // QQ 群跳转（修改群号即可）
+    document.getElementById('qqGroupBtn').onclick = function () {
+        window.open(
+            'https://qm.qq.com/cgi-bin/qm/qr?k=QQ群加群KEY&group_code=123456789',
+            '_blank'
+        );
+    };
+</script>
+
+<!-- Tawk.to 客服代码（原样保留） -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
 </body>
 </html>
