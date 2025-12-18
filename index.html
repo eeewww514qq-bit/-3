@@ -37,8 +37,17 @@
         h1 {
             color: #fff;
             margin-top: 10px;
+            margin-bottom: 0;   /* ✅ 去掉标题下间隙 */
             font-size: 36px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ===== 标题正下方小字（0 间隙） ===== */
+        .top-small-text {
+            font-size: 16px;
+            margin-top: 0;      /* ✅ 不留空隙 */
+            margin-bottom: 6px;
+            color: inherit;
         }
 
         .sub-text {
@@ -96,7 +105,6 @@
             color: #28a745;
         }
 
-        /* ===== 左下角 QQ 群按钮（文字版，适合手机） ===== */
         .qq-group-btn {
             position: fixed;
             left: 20px;
@@ -112,7 +120,6 @@
             z-index: 9999;
             box-shadow: 0 4px 10px rgba(0,0,0,0.4);
             transition: transform 0.2s ease, opacity 0.2s ease;
-
             color: #fff;
             font-size: 16px;
             font-weight: bold;
@@ -123,26 +130,6 @@
             transform: scale(1.05);
             opacity: 0.95;
         }
-
-        /* ===== 新增：顶部可输入文本样式（不影响其它布局） ===== */
-        .editable-text {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            width: 80%;
-            max-width: 600px;
-            padding: 8px 12px;
-            font-size: 16px;
-            border-radius: 8px;
-            border: none;
-            outline: none;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.45);
-            color: #fff;
-        }
-
-        .editable-text::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
     </style>
 </head>
 <body>
@@ -150,13 +137,7 @@
 <div class="background"></div>
 
 <h1>永久总站</h1>
-
-<!-- 新增：可输入文本区域（仅此处） -->
-<input
-    type="text"
-    class="editable-text"
-    placeholder="在这里输入内容…"
-/>
+<p class="top-small-text">这里是一行小字</p>
 
 <p class="sub-text">遇到通道打不开的情况更换浏览器访问本站即可，推介使用QQ浏览器！</p>
 
@@ -175,16 +156,11 @@
 
 <script>
     document.addEventListener('contextmenu', e => e.preventDefault());
-
     document.querySelectorAll('.button').forEach(btn => {
         btn.onclick = () => window.open(btn.dataset.url, '_blank');
     });
-
     document.getElementById('qqGroupBtn').onclick = function () {
-        window.open(
-            'http://www.930.mom',
-            '_blank'
-        );
+        window.open('http://www.930.mom', '_blank');
     };
 </script>
 
