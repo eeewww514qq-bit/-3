@@ -5,196 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>有趣的网站</title>
     <style>
+        /* 设置 html 和 body 的高度为100%，并确保最小高度为视口高度 */
         html, body {
             height: 100%;
-            margin: 0;
+            margin: 0; /* 去除默认的页边距 */
         }
-
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEM4EJpQsTFYXU7N-6646pMpCMOEbGKHQAC8x4AAljPGVYyaprjjrTSEDYE.jpeg');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-
+     
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 0;
             color: white;
-            min-height: 100vh;
+            min-height: 100vh; /* 保证内容区域始终覆盖整个视口高度 */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            justify-content: flex-start; /* 内容从顶部开始排列 */
+            align-items: center;  /* 居中内容 */
+
+            /* ===== 性感背景设置 ===== */
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.75)
+                ),
+                url("bg.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         h1 {
             color: #fff;
-            margin-top: 10px;
-            margin-bottom: 0;
-            font-size: 36px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        }
-
-        .top-small-text {
-            font-size: 16px;
-            margin-top: 0;
-            margin-bottom: 6px;
-            color: inherit;
-        }
-
-        .sub-text {
-            color: #FFD700;
-            font-size: 16px;
-            margin-top: 10px;
-            font-style: italic;
-            letter-spacing: 1px;
+            margin-top: 10px; /* 减少顶部间距，文字和按钮更接近 */
+            font-size: 36px; /* 调整为三分之一 */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* 为标题加上阴影效果 */
         }
 
         .button-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            width: 100%;
-            max-width: 900px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            justify-content: center;
+            flex-direction: column;
+            gap: 10px; /* 调整按钮之间的间距 */
+            width: 100%;  /* 使按钮容器宽度为100% */
+            max-width: 400px; /* 设置按钮容器的最大宽度，避免按钮过大 */
+            margin-top: 30px; /* 减少按钮与标题的间距 */
+            margin-bottom: 20px; /* 增加底部间距，避免按钮与屏幕底部太近 */
+        }
+
+        /* 小字样文字的样式 */
+        .button-label {
+            font-size: 12px;         /* 设置字体大小 */
+            color: #fff;            /* 设置字体颜色 */
+            margin: 0;              /* 取消文字的间距，紧贴按钮 */
+            padding: 0;             /* 确保小字没有内边距 */
         }
 
         .button {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: space-between; /* 使文字和GO按钮两侧分开 */
+            align-items: center; /* 垂直居中 */
             color: white;
-            padding: 15px 0;
-            width: calc(50% - 10px);
-            font-size: 20px;
-            border-radius: 12px;
-            opacity: 0.95;
+            padding: 30px 0; /* 将按钮高度加大一倍 */
+            width: 80%; /* 让按钮宽度为容器的80% */
+            max-width: 100%; /* 按钮最大宽度为容器宽度的100% */
+            margin: 0 auto;
+            text-align: left; /* 让文字左对齐 */
+            font-size: 20px; /* 增大按钮字体 */
+            border-radius: 12px; /* 增加按钮圆角，显得更柔和 */
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            opacity: 0.92; /* 稍微透一点，更性感 */
+            user-select: none; /* 禁止文本选择 */
             cursor: pointer;
-            box-sizing: border-box;
-            padding-left: 20px;
-            padding-right: 20px;
+            box-sizing: border-box; /* 确保内外边距计算正确 */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* 为按钮文字加上阴影 */
+            padding-left: 20px; /* 为文字和按钮左边增加一点间距 */
+            padding-right: 20px; /* 为右侧的GO按钮加一点间距 */
+            backdrop-filter: blur(2px); /* 轻微磨砂感（高级感） */
         }
 
         .button:hover {
-            opacity: 1;
+            opacity: 1; /* 悬停时完全不透明 */
         }
 
-        /* ===== 改动仅在这里：按钮颜色 ===== */
-        .button1 { background-color: #FF3B30; } /* 鲜红 */
-        .button2 { background-color: #FF9500; } /* 橙色 */
-        .button3 { background-color: #34C759; } /* 亮绿 */
-        .button4 { background-color: #007AFF; } /* 亮蓝 */
-        .button5 { background-color: #AF52DE; } /* 紫色 */
-        .button6 { background-color: #FF2D55; } /* 玫红 */
+        /* 设置按钮颜色 */
+        .button1 {
+            background-color: rgba(128, 0, 128, 0.85); /* 深紫色 */
+        }
 
-        /* 只改第一个按钮里的 Go 字样（保留你的设定） */
-        .button1 .go-text {
-            color: #FFD700;
+        .button2 {
+            background-color: rgba(255, 105, 180, 0.85); /* 粉色 */
         }
 
         .go-text {
-            font-size: 14px;
-            font-style: italic;
+            font-size: 14px; /* GO 字样的字体稍微小一点 */
+            font-style: italic; /* 让 GO 字体变成斜体，增加设计感 */
+            letter-spacing: 1px; /* 适当的字间距，让它更明显 */
         }
 
-        .go-green {
-            color: #E8FFE8;
-        }
-
-        .qq-group-btn {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #12B7F5;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 9999;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transition: transform 0.2s ease, opacity 0.2s ease;
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .qq-group-btn:hover {
-            transform: scale(1.05);
-            opacity: 0.95;
+        /* 隐藏第一个按钮 */
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
+    <h1>各種&軟</h1>
+    <div class="button-container">
+        <!-- 第一个按钮被隐藏 -->
+        <div class="button-label"></div>
+        <div class="button button1" data-url="https://kco5115.top">
+            <span>桐椷妙喲 25↓勿進</span>
+            <span class="go-text">GO></span>
+        </div>
 
-<div class="background"></div>
+        <div class="button-label">破解版👇免下崽 登陸就能👀</div>
+        <div class="button button2" data-url="http://qf3nb.cc/reg-v1/q/9/?yqr=4002&bj=&url=&smsType=1&wp=%E8%90%9D%E8%8E%89">
+            <span>腾讯云盘</span>
+            <span class="go-text">GO></span>
+        </div>
 
-<h1>永久总站</h1>
-<p class="top-small-text">备用地址:333ccc·cc</p>
-
-<p class="sub-text">
-    遇到通道打不开的情况更换浏览器访问本站即可<br>
-    推荐使用QQ浏览器！
-</p>
-
-<div class="button-container">
-    <div class="button button1" data-url="http://6e8e.cc">
-        <span>2号通道</span><span class="go-text">异常勿下</span>
+        <div class="button-label"></div>
+        <div class="button button2" data-url="http://qf5nb.cc/reg-v1/q/19/?yqr=4002&bj=&url=https%3A%2F%2Feppphh.hhphxz.com%2F20210415%2FTKOMEjDo%2Findex.m3u8&smsType=1&wp=&tid=2">
+            <span>陌陌椷人版</span>
+            <span class="go-text">GO></span>
+        </div>
     </div>
-    <div class="button button2" data-url="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh">
-        <span>1号通道</span><span class="go-text go-green">正常</span>
-    </div>
-    <div class="button button3" data-url="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4">
-        <span>4号通道</span><span class="go-text go-green">正常</span>
-    </div>
-    <div class="button button4" data-url="http://chaxun.ccpiteco.net/?NVYtW&yi=ertgrvjfsuwooecqfx">
-        <span>3号通道</span><span class="go-text go-green">正常</span>
-    </div>
-    <div class="button button5" data-url="https://eeewww514qq-bit.github.io/im.qq.com">
-        <span>勉费白嫖</span><span class="go-text go-green">正常</span>
-    </div>
-    <div class="button button6" data-url="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75">
-        <span>5号通道</span><span class="go-text go-green">正常</span>
-    </div>
-</div>
 
-<div class="qq-group-btn" id="qqGroupBtn" title="加入QQ群">
-    QQ群
-</div>
+    <script>
+        // 禁用右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // 禁用右键菜单
+        });
 
-<script>
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.querySelectorAll('.button').forEach(btn => {
-        btn.onclick = () => window.open(btn.dataset.url, '_blank');
-    });
-    document.getElementById('qqGroupBtn').onclick = function () {
-        window.open('http://www.930.mom', '_blank');
-    };
-</script>
-
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-
+        // 给每个按钮添加点击事件，触发跳转
+        document.querySelectorAll('.button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var url = button.getAttribute('data-url');
+                window.open(url, '_blank'); // 通过 JavaScript 跳转到链接
+            });
+        });
+    </script>
 </body>
 </html>
