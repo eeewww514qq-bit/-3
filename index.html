@@ -9,7 +9,7 @@
             height: 100%;
             margin: 0;
         }
-     
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -21,16 +21,16 @@
             justify-content: flex-start;
             align-items: center;
 
-            /* ===== 夜晚低光 + 霓虹背景 ===== */
+            /* ===== 默认：电脑端更暗 ===== */
             background-image:
                 linear-gradient(
-                    rgba(0, 0, 0, 0.75),
-                    rgba(20, 0, 20, 0.85)
+                    rgba(0, 0, 0, 0.8),
+                    rgba(10, 0, 15, 0.9)
                 ),
                 radial-gradient(
                     circle at top,
-                    rgba(255, 0, 90, 0.25),
-                    rgba(0, 0, 0, 0.9)
+                    rgba(255, 0, 90, 0.18),
+                    rgba(0, 0, 0, 0.95)
                 ),
                 url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOHY1pTFV8HQV4VQZzdlqitp4g7Cn54QACYCcAAqnnYVZoKqoUIlufsTYE.jpeg");
 
@@ -45,9 +45,8 @@
             font-size: 36px;
             color: #ff2f6d;
             text-shadow:
-                0 0 6px rgba(255, 50, 110, 0.9),
-                0 0 18px rgba(255, 0, 80, 0.6),
-                0 0 36px rgba(255, 0, 80, 0.3);
+                0 0 6px rgba(255, 50, 110, 0.7),
+                0 0 14px rgba(255, 0, 80, 0.4);
         }
 
         .button-container {
@@ -63,10 +62,8 @@
         .button-label {
             font-size: 12px;
             color: #ff9ab3;
-            margin: 0;
-            padding: 0;
             opacity: 0.85;
-            text-shadow: 0 0 6px rgba(255, 60, 120, 0.6);
+            text-shadow: 0 0 4px rgba(255, 60, 120, 0.5);
         }
 
         .button {
@@ -76,49 +73,40 @@
             color: #fff;
             padding: 30px 0;
             width: 80%;
-            max-width: 100%;
             margin: 0 auto;
             text-align: left;
             font-size: 20px;
             border-radius: 16px;
             transition: all 0.35s ease;
             opacity: 0.95;
-            user-select: none;
             cursor: pointer;
-            box-sizing: border-box;
             padding-left: 20px;
             padding-right: 20px;
 
             backdrop-filter: blur(8px);
             box-shadow:
-                0 0 10px rgba(255, 0, 90, 0.35),
-                0 0 22px rgba(255, 0, 120, 0.2),
-                0 12px 30px rgba(0, 0, 0, 0.85);
-            text-shadow: 0 0 6px rgba(255, 120, 160, 0.8);
+                0 0 8px rgba(255, 0, 90, 0.25),
+                0 10px 28px rgba(0, 0, 0, 0.85);
+            text-shadow: 0 0 5px rgba(255, 120, 160, 0.6);
         }
 
         .button:hover {
             opacity: 1;
             transform: translateY(-2px);
-            box-shadow:
-                0 0 18px rgba(255, 0, 120, 0.8),
-                0 0 36px rgba(255, 0, 120, 0.4),
-                0 16px 40px rgba(0, 0, 0, 0.9);
         }
 
-        /* ===== 霓虹按钮色 ===== */
         .button1 {
             background: linear-gradient(
                 135deg,
-                rgba(140, 0, 90, 0.85),
-                rgba(90, 0, 120, 0.85)
+                rgba(130, 0, 90, 0.85),
+                rgba(80, 0, 120, 0.85)
             );
         }
 
         .button2 {
             background: linear-gradient(
                 135deg,
-                rgba(180, 20, 80, 0.85),
+                rgba(170, 20, 80, 0.85),
                 rgba(90, 0, 40, 0.85)
             );
         }
@@ -126,15 +114,44 @@
         .go-text {
             font-size: 14px;
             font-style: italic;
-            letter-spacing: 1px;
             color: #ffd1dc;
-            text-shadow:
-                0 0 6px rgba(255, 80, 140, 0.9),
-                0 0 14px rgba(255, 0, 100, 0.6);
+            text-shadow: 0 0 6px rgba(255, 80, 140, 0.6);
         }
 
-        .hidden {
-            display: none;
+        /* ===== 📱 手机端：霓虹更亮 ===== */
+        @media (max-width: 768px) {
+            body {
+                background-image:
+                    linear-gradient(
+                        rgba(0, 0, 0, 0.55),
+                        rgba(20, 0, 20, 0.7)
+                    ),
+                    radial-gradient(
+                        circle at top,
+                        rgba(255, 0, 120, 0.35),
+                        rgba(0, 0, 0, 0.85)
+                    ),
+                    url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOHY1pTFV8HQV4VQZzdlqitp4g7Cn54QACYCcAAqnnYVZoKqoUIlufsTYE.jpeg");
+            }
+
+            h1 {
+                text-shadow:
+                    0 0 10px rgba(255, 50, 120, 1),
+                    0 0 26px rgba(255, 0, 100, 0.9);
+            }
+
+            .button {
+                box-shadow:
+                    0 0 14px rgba(255, 0, 120, 0.8),
+                    0 0 28px rgba(255, 0, 120, 0.5),
+                    0 14px 34px rgba(0, 0, 0, 0.9);
+            }
+
+            .go-text {
+                text-shadow:
+                    0 0 10px rgba(255, 80, 160, 1),
+                    0 0 20px rgba(255, 0, 120, 0.8);
+            }
         }
     </style>
 </head>
@@ -168,8 +185,7 @@
 
         document.querySelectorAll('.button').forEach(function(button) {
             button.addEventListener('click', function() {
-                var url = button.getAttribute('data-url');
-                window.open(url, '_blank');
+                window.open(button.getAttribute('data-url'), '_blank');
             });
         });
     </script>
