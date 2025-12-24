@@ -9,155 +9,90 @@
             height: 100%;
             margin: 0;
         }
-
+     
         body {
-            position: relative;
-            overflow-x: hidden;
-
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 0;
-            color: #f5d9e2;
+            color: white;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-        }
 
-        /* ===============================
-           📱 手机端固定背景（核心）
-        =============================== */
-        @media (max-width: 768px) {
-            body::before {
-                content: "";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-
-                background-image:
-                    linear-gradient(
-                        rgba(0, 0, 0, 0.55),
-                        rgba(20, 0, 20, 0.7)
-                    ),
-                    radial-gradient(
-                        circle at top,
-                        rgba(255, 0, 120, 0.4),
-                        rgba(0, 0, 0, 0.9)
-                    ),
-                    url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOHY1pTFV8HQV4VQZzdlqitp4g7Cn54QACYCcAAqnnYVZoKqoUIlufsTYE.jpeg");
-
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-        }
-
-        /* ===============================
-           💻 电脑端背景（普通）
-        =============================== */
-        @media (min-width: 769px) {
-            body {
-                background-image:
-                    linear-gradient(
-                        rgba(0, 0, 0, 0.8),
-                        rgba(10, 0, 15, 0.9)
-                    ),
-                    radial-gradient(
-                        circle at top,
-                        rgba(255, 0, 90, 0.18),
-                        rgba(0, 0, 0, 0.95)
-                    ),
-                    url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOHY1pTFV8HQV4VQZzdlqitp4g7Cn54QACYCcAAqnnYVZoKqoUIlufsTYE.jpeg");
-
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
+            /* ✅ 背景图设置 */
+            background-image: url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOHY1pTFV8HQV4VQZzdlqitp4g7Cn54QACYCcAAqnnYVZoKqoUIlufsTYE.jpeg");
+            background-size: cover;        /* 铺满屏幕 */
+            background-position: center;   /* 居中 */
+            background-repeat: no-repeat;  /* 不重复 */
+            background-attachment: fixed;  /* 滚动不抖动（手机也兼容） */
         }
 
         h1 {
-            margin-top: 14px;
+            color: #fff;
+            margin-top: 10px;
             font-size: 36px;
-            color: #ff2f6d;
-            text-shadow:
-                0 0 10px rgba(255, 50, 120, 1),
-                0 0 26px rgba(255, 0, 100, 0.9);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
         }
 
         .button-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
             max-width: 400px;
-            margin-top: 32px;
+            margin-top: 30px;
             margin-bottom: 20px;
         }
 
         .button-label {
             font-size: 12px;
-            color: #ff9ab3;
-            opacity: 0.9;
-            text-shadow: 0 0 6px rgba(255, 60, 120, 0.6);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
         .button {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #fff;
-            padding: 30px 0;
+            color: white;
+            padding: 30px 20px;
             width: 80%;
             margin: 0 auto;
             text-align: left;
             font-size: 20px;
-            border-radius: 16px;
-            transition: all 0.35s ease;
-            opacity: 0.95;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            opacity: 0.9;
+            user-select: none;
             cursor: pointer;
-            padding-left: 20px;
-            padding-right: 20px;
-
-            backdrop-filter: blur(8px);
-            box-shadow:
-                0 0 14px rgba(255, 0, 120, 0.8),
-                0 0 28px rgba(255, 0, 120, 0.5),
-                0 14px 34px rgba(0, 0, 0, 0.9);
-            text-shadow: 0 0 6px rgba(255, 120, 160, 0.8);
+            box-sizing: border-box;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
         }
 
         .button:hover {
             opacity: 1;
-            transform: translateY(-2px);
         }
 
         .button1 {
-            background: linear-gradient(
-                135deg,
-                rgba(130, 0, 90, 0.85),
-                rgba(80, 0, 120, 0.85)
-            );
+            background-color: rgba(128, 0, 128, 0.8);
         }
 
         .button2 {
-            background: linear-gradient(
-                135deg,
-                rgba(170, 20, 80, 0.85),
-                rgba(90, 0, 40, 0.85)
-            );
+            background-color: rgba(255, 105, 180, 0.8);
         }
 
         .go-text {
             font-size: 14px;
             font-style: italic;
-            color: #ffd1dc;
-            text-shadow:
-                0 0 10px rgba(255, 80, 160, 1),
-                0 0 20px rgba(255, 0, 120, 0.8);
+            letter-spacing: 1px;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -191,7 +126,8 @@
 
         document.querySelectorAll('.button').forEach(function(button) {
             button.addEventListener('click', function() {
-                window.open(button.getAttribute('data-url'), '_blank');
+                var url = button.getAttribute('data-url');
+                window.open(url, '_blank');
             });
         });
     </script>
