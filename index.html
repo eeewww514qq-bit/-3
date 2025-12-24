@@ -21,12 +21,12 @@
             justify-content: flex-start;
             align-items: center;
 
-            /* ✅ 背景图设置 */
+            /* ✅ 背景图固定不随页面滑动 */
             background-image: url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOHY1pTFV8HQV4VQZzdlqitp4g7Cn54QACYCcAAqnnYVZoKqoUIlufsTYE.jpeg");
-            background-size: cover;        /* 铺满屏幕 */
-            background-position: center;   /* 居中 */
-            background-repeat: no-repeat;  /* 不重复 */
-            background-attachment: fixed;  /* 滚动不抖动（手机也兼容） */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* 👈 核心：背景不动 */
         }
 
         h1 {
@@ -51,7 +51,6 @@
             color: #fff;
             margin: 0;
             padding: 0;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
         .button {
@@ -65,7 +64,7 @@
             text-align: left;
             font-size: 20px;
             border-radius: 12px;
-            transition: background-color 0.3s ease, opacity 0.3s ease;
+            transition: opacity 0.3s ease;
             opacity: 0.9;
             user-select: none;
             cursor: pointer;
@@ -89,10 +88,6 @@
             font-size: 14px;
             font-style: italic;
             letter-spacing: 1px;
-        }
-
-        .hidden {
-            display: none;
         }
     </style>
 </head>
