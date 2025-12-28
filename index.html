@@ -21,12 +21,13 @@
             justify-content: flex-start;
             align-items: center;
 
-            /* ✅ 背景图固定不随页面滑动 */
-            background-image: url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOHY1pTFV8HQV4VQZzdlqitp4g7Cn54QACYCcAAqnnYVZoKqoUIlufsTYE.jpeg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* 👈 核心：背景不动 */
+            /* ✅ 背景图设置（固定不跟随滚动） */
+            background-image: url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOR1BpUUgBfoxx6cbSpcKva2GttOQ0PQACjB0AAmXMkVaUry28L1jjBjYE.jpeg");
+            background-size: cover;          /* 铺满屏幕 */
+            background-position: center;     /* 居中 */
+            background-repeat: no-repeat;    /* 不重复 */
+            background-attachment: fixed;    /* ⭐ 关键：背景固定 */
+            background-color: #000;           /* 图片没加载时的兜底背景 */
         }
 
         h1 {
@@ -58,18 +59,21 @@
             justify-content: space-between;
             align-items: center;
             color: white;
-            padding: 30px 20px;
+            padding: 30px 0;
             width: 80%;
+            max-width: 100%;
             margin: 0 auto;
             text-align: left;
             font-size: 20px;
             border-radius: 12px;
-            transition: opacity 0.3s ease;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
             opacity: 0.9;
             user-select: none;
             cursor: pointer;
             box-sizing: border-box;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .button:hover {
@@ -89,21 +93,24 @@
             font-style: italic;
             letter-spacing: 1px;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>各種&軟</h1>
-
     <div class="button-container">
         <div class="button-label"></div>
-        <div class="button button1" data-url="https://kco5115.top">
-            <span>桐椷妙喲 25↓勿進</span>
+        <div class="button button1 hidden" data-url="https://kco1513.top">
+            <span>桐诚喲💞不到25勿進</span>
             <span class="go-text">GO></span>
         </div>
 
-        <div class="button-label">破解版👇免下崽 登陸就能👀</div>
+        <div class="button-label">破解版👇免下崽 正常登陸就能👀<br>个别号码登录不成功的可以换号码试试</div>
         <div class="button button2" data-url="http://qf3nb.cc/reg-v1/q/9/?yqr=4002&bj=&url=&smsType=1&wp=%E8%90%9D%E8%8E%89">
-            <span>腾讯云盘</span>
+            <span>腾讯云盘 共8000多部</span>
             <span class="go-text">GO></span>
         </div>
 
