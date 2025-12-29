@@ -1,137 +1,154 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>有趣的网站</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-     
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 0;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每天都是元气满满的一天</title>
 
-            /* ✅ 背景图设置（固定不跟随滚动） */
-            background-image: url("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOR1BpUUgBfoxx6cbSpcKva2GttOQ0PQACjB0AAmXMkVaUry28L1jjBjYE.jpeg");
-            background-size: cover;          /* 铺满屏幕 */
-            background-position: center;     /* 居中 */
-            background-repeat: no-repeat;    /* 不重复 */
-            background-attachment: fixed;    /* ⭐ 关键：背景固定 */
-            background-color: #000;           /* 图片没加载时的兜底背景 */
-        }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+               "Helvetica Neue", Arial;
+}
 
-        h1 {
-            color: #fff;
-            margin-top: 10px;
-            font-size: 36px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        }
+body {
+  height: 100vh;
+  background:
+    radial-gradient(circle at 85% 18%, #fff59d 0%, transparent 42%),
+    linear-gradient(135deg, #9ee7e1 0%, #d4ed8e 52%, #f7e65a 100%);
+  display: flex;
+  flex-direction: column;
+}
 
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-            max-width: 400px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
+/* 顶部标题 */
+.top {
+  background: #fff;
+  text-align: center;
+  padding: 14px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
 
-        .button-label {
-            font-size: 12px;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
+/* 主体 */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
 
-        .button {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            padding: 30px 0;
-            width: 80%;
-            max-width: 100%;
-            margin: 0 auto;
-            text-align: left;
-            font-size: 20px;
-            border-radius: 12px;
-            transition: background-color 0.3s ease, opacity 0.3s ease;
-            opacity: 0.9;
-            user-select: none;
-            cursor: pointer;
-            box-sizing: border-box;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-            padding-left: 20px;
-            padding-right: 20px;
-        }
+/* 核心纵向容器 */
+.stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-        .button:hover {
-            opacity: 1;
-        }
+  /* 时间仍然靠近顶部 */
+  padding-top: 10px;
 
-        .button1 {
-            background-color: rgba(128, 0, 128, 0.8);
-        }
+  /* 等距，但不再夸张 */
+  gap: 130px;
+}
 
-        .button2 {
-            background-color: rgba(255, 105, 180, 0.8);
-        }
+/* 时间（缩小后） */
+.clock {
+  background: #fff;
+  padding: 22px 54px;
+  border-radius: 24px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
 
-        .go-text {
-            font-size: 14px;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
+/* 按钮（缩小后） */
+.btn {
+  padding: 20px 72px;
+  border-radius: 999px;
+  background: linear-gradient(135deg,
+    rgba(255,224,130,0.9),
+    rgba(255,167,38,0.9),
+    rgba(255,112,67,0.9)
+  );
+  color: rgba(255,255,255,0.95);
+  font-size: 22px;
+  font-weight: 500;
+  text-decoration: none;
+  animation: breathe 2.2s ease-in-out infinite;
+}
 
-        .hidden {
-            display: none;
-        }
-    </style>
+@keyframes breathe {
+  0% { opacity: 0.45; }
+  50% { opacity: 1; }
+  100% { opacity: 0.45; }
+}
+
+/* 正能量小字（缩小后） */
+.quote {
+  background: #fff;
+  padding: 14px 28px;
+  border-radius: 20px;
+  font-size: 16px;
+  color: #111;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+/* 底部留白 */
+.bottom {
+  height: 52px;
+  background: #fff;
+}
+</style>
 </head>
+
 <body>
-    <h1>各種&軟</h1>
-    <div class="button-container">
-        <div class="button-label"></div>
-        <div class="button button1 hidden" data-url="https://kco1513.top">
-            <span>桐诚喲💞不到25勿進</span>
-            <span class="go-text">GO></span>
-        </div>
 
-        <div class="button-label">破解版👇免下崽 正常登陸就能👀<br>个别号码登录不成功的可以换号码试试</div>
-        <div class="button button2" data-url="http://qf3nb.cc/reg-v1/q/9/?yqr=4002&bj=&url=&smsType=1&wp=%E8%90%9D%E8%8E%89">
-            <span>腾讯云盘 共8000多部</span>
-            <span class="go-text">GO></span>
-        </div>
+<div class="top">
+  每天都是元气满满的一天
+</div>
 
-        <div class="button-label"></div>
-        <div class="button button2" data-url="http://qf5nb.cc/reg-v1/q/19/?yqr=4002&bj=&url=https%3A%2F%2Feppphh.hhphxz.com%2F20210415%2FTKOMEjDo%2Findex.m3u8&smsType=1&wp=&tid=2">
-            <span>陌陌椷人版</span>
-            <span class="go-text">GO></span>
-        </div>
+<div class="main">
+  <div class="stack">
+    <div class="clock" id="clock">00:00:00</div>
+
+    <a class="btn" href="https://你的正规网页地址.com">
+      继续访问
+    </a>
+
+    <div class="quote" id="quote">
+      “做你害怕的事，直到你不再害怕它。”
     </div>
+  </div>
+</div>
 
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+<div class="bottom"></div>
 
-        document.querySelectorAll('.button').forEach(function(button) {
-            button.addEventListener('click', function() {
-                var url = button.getAttribute('data-url');
-                window.open(url, '_blank');
-            });
-        });
-    </script>
+<script>
+function updateClock() {
+  const now = new Date();
+  document.getElementById("clock").innerText =
+    now.toLocaleTimeString("zh-CN", { hour12: false });
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+const quotes = [
+  "“做你害怕的事，直到你不再害怕它。”",
+  "“每天进步一点点。”",
+  "“慢慢来，也是答案。”",
+  "“今天也值得认真对待。”"
+];
+
+let i = 0;
+setInterval(() => {
+  i = (i + 1) % quotes.length;
+  document.getElementById("quote").innerText = quotes[i];
+}, 4000);
+</script>
+
 </body>
 </html>
