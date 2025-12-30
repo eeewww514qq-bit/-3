@@ -1,153 +1,210 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每天都是元气满满的一天</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有趣的网站</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
-               "Helvetica Neue", Arial;
-}
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOSQhpUbUp5-Hp-5QOCjvcndngN8cXPQACeRgAAoBckFYc2vD6FgiF2TYE.jpeg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
 
-body {
-  height: 100vh;
-  background:
-    radial-gradient(circle at 85% 18%, #fff59d 0%, transparent 42%),
-    linear-gradient(135deg, #9ee7e1 0%, #d4ed8e 52%, #f7e65a 100%);
-  display: flex;
-  flex-direction: column;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
 
-/* 顶部标题 */
-.top {
-  background: #fff;
-  text-align: center;
-  padding: 14px 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #000;
-}
+        h1 {
+            color: #fff;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 36px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
 
-/* 主体 */
-.main {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-}
+        .top-small-text {
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: inherit;
+        }
 
-/* 核心纵向容器 */
-.stack {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+        .sub-text {
+           color: #fff3b0;
+           font-size: 20px;
+           margin-top: 10px;
+           font-style: italic;
+           letter-spacing: 1px;
+           text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+       }
 
-  /* 时间仍然靠近顶部 */
-  padding-top: 10px;
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
 
-  /* 等距，但不再夸张 */
-  gap: 130px;
-}
+        .button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 15px 0;
+            width: calc(50% - 10px);
+            font-size: 20px;
+            border-radius: 12px;
+            opacity: 0.95;
+            cursor: pointer;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
-/* 时间（缩小后） */
-.clock {
-  background: #fff;
-  padding: 22px 54px;
-  border-radius: 24px;
-  font-size: 48px;
-  font-weight: 700;
-  color: #111;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-}
+        .button:hover {
+            opacity: 1;
+        }
 
-/* 按钮（缩小后） */
-.btn {
-  padding: 20px 72px;
-  border-radius: 999px;
-  background: linear-gradient(135deg,
-    rgba(255,224,130,0.9),
-    rgba(255,167,38,0.9),
-    rgba(255,112,67,0.9)
-  );
-  color: rgba(255,255,255,0.95);
-  font-size: 22px;
-  font-weight: 500;
-  text-decoration: none;
-  animation: breathe 2.2s ease-in-out infinite;
-}
+        /* ===== 改动仅在这里：按钮颜色 ===== */
+        .button1 { background: linear-gradient(135deg, #3f51ff, #7c4dff); 
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);}    
+        
+        .button2 { background: linear-gradient(135deg, #00c853, #64dd17);
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);} 
+        
+        .button3 { background: linear-gradient(135deg, #ff9100, #ff6d00); 
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);}
+        
+        .button4 { background: linear-gradient(135deg, #d500f9, #ff1744); 
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);}
+        
+        .button5 { background: linear-gradient(135deg, #ffd600, #ffab00); 
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);}
+            
+        .button6 { background: linear-gradient(135deg, #2b2b2b, #6a6a6a, #2b2b2b); 
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);}
 
-@keyframes breathe {
-  0% { opacity: 0.45; }
-  50% { opacity: 1; }
-  100% { opacity: 0.45; }
-}
+        .button1 .go-text {
+            color: #FFD700;
+        }
 
-/* 正能量小字（缩小后） */
-.quote {
-  background: #fff;
-  padding: 14px 28px;
-  border-radius: 20px;
-  font-size: 16px;
-  color: #111;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-}
+        .go-text {
+            font-size: 14px;
+            font-style: italic;
+        }
 
-/* 底部留白 */
-.bottom {
-  height: 52px;
-  background: #fff;
-}
-</style>
+        .go-green {
+            color: #E8FFE8;
+        }
+
+        .qq-group-btn {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #12B7F5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .qq-group-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.95;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="top">
-  每天都是元气满满的一天
-</div>
+<div class="background"></div>
 
-<div class="main">
-  <div class="stack">
-    <div class="clock" id="clock">00:00:00</div>
+<h1>学习导航</h1>
+<p class="top-small-text">相关链接:333ccc·cc</p>
 
-    <a class="btn" href="https://你的正规网页地址.com">
-      继续访问
-    </a>
+<p class="sub-text">
+    使用说明：（包.天）以上请保存好（口.令）或注册账号使用<br>
+        避免（会.员）丢失！
+</p>
 
-    <div class="quote" id="quote">
-      “做你害怕的事，直到你不再害怕它。”
+<div class="button-container">
+    <div class="button button1" data-url="http://6e8e.cc">
+        <span>学习资料2</span><span class="go-text">进入</span>
     </div>
-  </div>
+    <div class="button button2" data-url="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh">
+        <span>学习资料1</span><span class="go-text go-green">进入</span>
+    </div>
+    <div class="button button3" data-url="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4">
+        <span>学习资料4</span><span class="go-text go-green">进入</span>
+    </div>
+    <div class="button button4" data-url="http://ym.xagqwl.com/yxld.php?_wv=9983&#/home/ertgrvjf?openid=6IWrUgwskMNu7D_HRVmRe&bucket=0">
+        <span>学习资料3</span><span class="go-text go-green">进入</span>
+    </div>
+    <div class="button button5" data-url="https://1busin-ebsoo-19cos.cyou">
+        <span>免费学习资料</span><span class="go-text go-green">进入</span>
+    </div>
+    <div class="button button6" data-url="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75">
+        <span>学习资料5</span><span class="go-text go-green">进入</span>
+    </div>
 </div>
 
-<div class="bottom"></div>
+<div class="qq-group-btn" id="qqGroupBtn" title="加入QQ群">
+    QQ群
+</div>
 
 <script>
-function updateClock() {
-  const now = new Date();
-  document.getElementById("clock").innerText =
-    now.toLocaleTimeString("zh-CN", { hour12: false });
-}
-updateClock();
-setInterval(updateClock, 1000);
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.querySelectorAll('.button').forEach(btn => {
+        btn.onclick = () => window.open(btn.dataset.url, '_blank');
+    });
+    document.getElementById('qqGroupBtn').onclick = function () {
+        window.open('http://www.930.mom', '_blank');
+    };
+</script>
 
-const quotes = [
-  "“做你害怕的事，直到你不再害怕它。”",
-  "“每天进步一点点。”",
-  "“慢慢来，也是答案。”",
-  "“今天也值得认真对待。”"
-];
-
-let i = 0;
-setInterval(() => {
-  i = (i + 1) % quotes.length;
-  document.getElementById("quote").innerText = quotes[i];
-}, 4000);
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
 
 </body>
