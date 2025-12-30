@@ -29,41 +29,41 @@ body {
     align-items: center;
 }
 
+/* ===== 标题区域间距优化 ===== */
 h1 {
-    margin-top: 14px;
+    margin-top: 12px;
+    margin-bottom: 6px;   /* ↓ 缩小标题下方空白 */
     font-size: 36px;
     text-shadow: 2px 2px 6px rgba(0,0,0,.6);
 }
 
-.top-small-text {
-    font-size: 15px;
-    opacity: .9;
-}
-
 .sub-text {
+    margin-top: 0;        /* ↓ 紧贴标题 */
+    margin-bottom: 8px;   /* ↓ 控制与下方说明的距离 */
     color: #fff3b0;
     font-size: 18px;
     font-style: italic;
     letter-spacing: 1px;
-    margin-top: 10px;
+    line-height: 1.5;
     text-shadow: 0 1px 3px rgba(0,0,0,.6);
 }
 
 .notice {
     max-width: 880px;
-    margin: 20px auto 0;
+    margin: 4px auto 0;   /* ↓ 减少空白 */
     font-size: 14px;
     line-height: 1.6;
     opacity: .88;
 }
 
+/* ===== 按钮区域 ===== */
 .button-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     max-width: 900px;
     width: 100%;
-    margin: 30px auto 20px;
+    margin: 24px auto 20px;
     justify-content: center;
 }
 
@@ -73,7 +73,7 @@ h1 {
     border-radius: 12px;
     font-size: 20px;
     display: flex;
-    justify-content: center; /* 居中显示 */
+    justify-content: center;
     align-items: center;
     color: #fff;
     text-decoration: none;
@@ -90,9 +90,9 @@ h1 {
 .button5 { background: linear-gradient(135deg,#ffd600,#ffab00); box-shadow:0 0 8px rgba(255,255,255,.35);}
 .button6 { background: linear-gradient(135deg,#2b2b2b,#6a6a6a,#2b2b2b); box-shadow:0 0 8px rgba(255,255,255,.35);}
 
-/* ===== 已优化的 QQ / 联系方式按钮 ===== */
+/* ===== 联系方式按钮 ===== */
 .qq-group-btn {
-    margin: 24px auto 40px;
+    margin: 20px auto 36px;
     padding: 10px 24px;
     background: rgba(18,183,245,0.9);
     border-radius: 22px;
@@ -109,45 +109,28 @@ h1 {
 <div class="background"></div>
 
 <h1>学习资料导航</h1>
+
 <p class="sub-text">
 包天以上请妥善保存账号信息<br>
 避免学习进度丢失
 </p>
 
 <div class="notice">
-本站仅提供第三方学习资源的整理与导航，内容由外部站点提供。<br>
-    
+本站仅提供第三方学习资源的整理与导航，内容由外部站点提供。
 </div>
 
 <div class="button-container">
 
-<a class="button button1" href="http://6e8e.cc" target="_blank" rel="noopener">
-学习站点2
-</a>
-
-<a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="noopener">
-学习站点1
-</a>
-
-<a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank" rel="noopener">
-学习站点4
-</a>
-
-<a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank" rel="noopener">
-学习站点3
-</a>
-
-<a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">
-免费学习资料
-</a>
-
-<a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="noopener">
-学习站点5
-</a>
+<a class="button button1" href="http://6e8e.cc" target="_blank" rel="noopener">学习站点2</a>
+<a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="noopener">学习站点1</a>
+<a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank" rel="noopener">学习站点4</a>
+<a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank" rel="noopener">学习站点3</a>
+<a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">免费学习资料</a>
+<a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="noopener">学习站点5</a>
 
 </div>
 
-<p style="font-size:13px;opacity:.75;margin-top:10px;">
+<p style="font-size:13px;opacity:.75;margin-top:6px;">
 如需交流或反馈问题，可通过以下方式联系
 </p>
 
@@ -155,7 +138,7 @@ h1 {
    href="http://www.930.mom"
    target="_blank"
    rel="noopener">
-学习交流群/联系方式
+学习交流群 / 联系方式
 </a>
 
 <!-- 客服 -->
