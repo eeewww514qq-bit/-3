@@ -102,55 +102,56 @@ h1 {
     box-shadow: 0 2px 6px rgba(0,0,0,.3);
 }
 
-/* ===== 弹窗样式 ===== */
+/* ===== 极简手机弹窗样式 ===== */
 .popup-overlay {
-    display: none; /* 默认隐藏 */
+    display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top:0; left:0;
+    width:100%; height:100%;
     background: rgba(0,0,0,0.6);
     z-index: 9999;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .popup-content {
     background: #fff;
     color: #333;
-    padding: 20px 30px;
+    padding: 15px 20px;
     border-radius: 12px;
-    max-width: 400px;
+    width: 90%;
+    max-width: 300px;
     text-align: center;
-    position: relative;
     box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
 
 .popup-content h2 {
-    margin-top: 0;
-    font-size: 24px;
+    margin: 0 0 8px 0;
+    font-size: 20px;
 }
 
-.popup-close {
-    position: absolute;
-    top: 10px; right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #999;
+.popup-content p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
 }
 
-.popup-close:hover { color: #333; }
-
-.popup-content button {
-    margin-top: 12px;
-    padding: 10px 18px;
+.popup-close-btn {
+    padding: 10px 0;
+    width: 100%;
     border: none;
     border-radius: 6px;
-    background: #3f51ff;
-    color: #fff;
+    font-size: 16px;
+    background: #ccc;
+    color: #333;
     cursor: pointer;
 }
 
-.popup-content button:hover { background: #2c3e9f; }
+.popup-close-btn:hover {
+    background: #999;
+}
 </style>
 </head>
 
@@ -191,13 +192,12 @@ h1 {
 学习交流群 / 联系方式
 </a>
 
-<!-- ===== 弹窗 HTML ===== -->
+<!-- ===== 极简手机弹窗 HTML ===== -->
 <div id="popupOverlay" class="popup-overlay">
     <div class="popup-content">
-        <span id="closePopup" class="popup-close">&times;</span>
         <h2>温馨提示</h2>
         <p>本站整理了丰富的学习资料，记得妥善保存账号信息。</p>
-        <button id="popupButton">立即查看免费资料</button>
+        <button id="popupCloseBtn" class="popup-close-btn">关闭</button>
     </div>
 </div>
 
@@ -215,24 +215,21 @@ window.addEventListener('load', function(){
 
     // ===== 弹窗逻辑 =====
     const popupOverlay = document.getElementById('popupOverlay');
-    const closePopup = document.getElementById('closePopup');
-    const popupButton = document.getElementById('popupButton');
+    const popupCloseBtn = document.getElementById('popupCloseBtn');
 
-    // 工具函数：操作 cookie
+    // cookie 工具函数
     function setCookie(name, value, days) {
         const d = new Date();
         d.setTime(d.getTime() + (days*24*60*60*1000));
         document.cookie = name + "=" + value + ";path=/;expires=" + d.toUTCString();
     }
-
     function getCookie(name) {
         const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
         return match ? match[2] : null;
     }
 
     // 只在手机端显示
-    const isMobile = window.innerWidth <= 768;
-    if(!isMobile) return;
+    if(window.innerWidth > 768) return;
 
     // 只显示一次
     if(getCookie('popupShown') === 'true') return;
@@ -242,18 +239,14 @@ window.addEventListener('load', function(){
         setCookie('popupShown', 'true', 7); // 7天内不再显示
     }
 
-    closePopup.onclick = function() {
+    // 点击关闭按钮关闭
+    popupCloseBtn.onclick = function(){
         popupOverlay.style.display = 'none';
     }
 
-    popupOverlay.onclick = function(e) {
-        if(e.target === popupOverlay){
-            popupOverlay.style.display = 'none';
-        }
-    }
-
-    popupButton.onclick = function() {
-        window.location.href = 'https://1busin-ebsoo-19cos.cyou';
+    // 点击遮罩层关闭
+    popupOverlay.onclick = function(e){
+        if(e.target === popupOverlay) popupOverlay.style.display = 'none';
     }
 
     // 延迟 2 秒弹出
