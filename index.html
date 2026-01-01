@@ -148,10 +148,7 @@ h1 {
     color: #333;
     cursor: pointer;
 }
-
-.popup-close-btn:hover {
-    background: #999;
-}
+.popup-close-btn:hover { background: #999; }
 </style>
 </head>
 
@@ -171,40 +168,34 @@ h1 {
 </div>
 
 <div class="button-container">
-
 <a class="button button1" href="http://6e8e.cc" target="_blank" rel="noopener">学习站点2</a>
 <a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="noopener">学习站点1</a>
 <a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank" rel="noopener">学习站点4</a>
 <a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank" rel="noopener">学习站点3</a>
 <a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">免费学习资料</a>
 <a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="noopener">学习站点5</a>
-
 </div>
 
 <p style="font-size:13px;opacity:.75;margin-top:6px;">
 如需交流或反馈问题，可通过以下方式联系
 </p>
 
-<a class="qq-group-btn"
-   href="http://www.930.mom"
-   target="_blank"
-   rel="noopener">
+<a class="qq-group-btn" href="http://www.930.mom" target="_blank" rel="noopener">
 学习交流群 / 联系方式
 </a>
 
-<!-- ===== 极简手机弹窗 HTML ===== -->
 <div id="popupOverlay" class="popup-overlay">
     <div class="popup-content">
         <h2>截图保存方便下次观看</h2>
-        <p>进不了本站时请更换浏览器，或更换地址地址访问即可<br><br>地址一:111ccc.cc  地址二:333ccc.cc<br>地址三:v6z.xyz</p>
+        <p>进不了本站时请更换浏览器，或更换地址地址访问即可！！！<br><br>
+        地址一:111ccc.cc 地址二:333ccc.cc<br>地址三:v6z.xyz</p>
         <button id="popupCloseBtn" class="popup-close-btn">关闭</button>
     </div>
 </div>
 
-<!-- 客服 JS 延迟加载 + 弹窗逻辑 -->
 <script>
 window.addEventListener('load', function(){
-    // 客服脚本
+
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     var s1 = document.createElement("script");
     s1.async = true;
@@ -213,11 +204,21 @@ window.addEventListener('load', function(){
     s1.setAttribute('crossorigin', '*');
     document.body.appendChild(s1);
 
-    // ===== 弹窗逻辑 =====
+    /* ===== 关键：去掉欢迎页面，直接进入聊天 ===== */
+    Tawk_API.onLoad = function () {
+        Tawk_API.hideWidget();
+        if (window.innerWidth <= 768) {
+            setTimeout(function () {
+                Tawk_API.showWidget();
+                Tawk_API.maximize();
+            }, 300);
+        }
+    };
+
+    /* ===== 原弹窗逻辑 ===== */
     const popupOverlay = document.getElementById('popupOverlay');
     const popupCloseBtn = document.getElementById('popupCloseBtn');
 
-    // cookie 工具函数
     function setCookie(name, value, days) {
         const d = new Date();
         d.setTime(d.getTime() + (days*24*60*60*1000));
@@ -228,28 +229,22 @@ window.addEventListener('load', function(){
         return match ? match[2] : null;
     }
 
-    // 只在手机端显示
     if(window.innerWidth > 768) return;
-
-    // 只显示一次
     if(getCookie('popupShown') === 'true') return;
 
     function openPopup() {
         popupOverlay.style.display = 'flex';
-        setCookie('popupShown', 'true', 7); // 7天内不再显示
+        setCookie('popupShown', 'true', 7);
     }
 
-    // 点击关闭按钮关闭
     popupCloseBtn.onclick = function(){
         popupOverlay.style.display = 'none';
     }
 
-    // 点击遮罩层关闭
     popupOverlay.onclick = function(e){
         if(e.target === popupOverlay) popupOverlay.style.display = 'none';
     }
 
-    // 延迟 2 秒弹出
     setTimeout(openPopup, 2000);
 });
 </script>
