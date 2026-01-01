@@ -29,7 +29,7 @@ body {
     align-items: center;
 }
 
-/* ===== 标题区域间距优化 ===== */
+/* ===== 标题 ===== */
 h1 {
     margin-top: 12px;
     margin-bottom: 6px;
@@ -56,7 +56,7 @@ h1 {
     opacity: .88;
 }
 
-/* ===== 按钮区域 ===== */
+/* ===== 按钮 ===== */
 .button-container {
     display: flex;
     flex-wrap: wrap;
@@ -83,14 +83,14 @@ h1 {
 
 .button:hover { opacity: 1; }
 
-.button1 { background: linear-gradient(135deg,#3f51ff,#7c4dff); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button2 { background: linear-gradient(135deg,#00c853,#64dd17); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button3 { background: linear-gradient(135deg,#ff9100,#ff6d00); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button4 { background: linear-gradient(135deg,#d500f9,#ff1744); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button5 { background: linear-gradient(135deg,#ffd600,#ffab00); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button6 { background: linear-gradient(135deg,#2b2b2b,#6a6a6a,#2b2b2b); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button1 { background: linear-gradient(135deg,#3f51ff,#7c4dff); }
+.button2 { background: linear-gradient(135deg,#00c853,#64dd17); }
+.button3 { background: linear-gradient(135deg,#ff9100,#ff6d00); }
+.button4 { background: linear-gradient(135deg,#d500f9,#ff1744); }
+.button5 { background: linear-gradient(135deg,#ffd600,#ffab00); }
+.button6 { background: linear-gradient(135deg,#2b2b2b,#6a6a6a,#2b2b2b); }
 
-/* ===== 联系方式按钮 ===== */
+/* ===== 联系方式 ===== */
 .qq-group-btn {
     margin: 20px auto 36px;
     padding: 10px 24px;
@@ -99,21 +99,17 @@ h1 {
     font-size: 14px;
     text-decoration: none;
     color: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,.3);
 }
 
-/* ===== 极简手机弹窗样式 ===== */
+/* ===== 手机弹窗 ===== */
 .popup-overlay {
     display: none;
     position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
+    inset: 0;
     background: rgba(0,0,0,0.6);
     z-index: 9999;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
 }
 
 .popup-content {
@@ -124,31 +120,16 @@ h1 {
     width: 90%;
     max-width: 300px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,.3);
-}
-
-.popup-content h2 {
-    margin: 0 0 8px 0;
-    font-size: 20px;
-}
-
-.popup-content p {
-    font-size: 14px;
-    line-height: 1.4;
-    margin: 0 0 12px 0;
 }
 
 .popup-close-btn {
-    padding: 10px 0;
     width: 100%;
+    padding: 10px;
     border: none;
     border-radius: 6px;
-    font-size: 16px;
     background: #ccc;
-    color: #333;
     cursor: pointer;
 }
-.popup-close-btn:hover { background: #999; }
 </style>
 </head>
 
@@ -164,89 +145,51 @@ h1 {
 </p>
 
 <div class="notice">
-本站仅提供第三方学习资源的整理与导航，内容由外部站点提供。
+本站仅提供第三方学习资源的整理与导航
 </div>
 
 <div class="button-container">
-<a class="button button1" href="http://6e8e.cc" target="_blank" rel="noopener">学习站点2</a>
-<a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="noopener">学习站点1</a>
-<a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank" rel="noopener">学习站点4</a>
-<a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank" rel="noopener">学习站点3</a>
-<a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">免费学习资料</a>
-<a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="noopener">学习站点5</a>
+<a class="button button1" href="http://6e8e.cc" target="_blank">学习站点2</a>
+<a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank">学习站点1</a>
+<a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank">学习站点4</a>
+<a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank">学习站点3</a>
+<a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank">免费学习资料</a>
+<a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank">学习站点5</a>
 </div>
 
-<p style="font-size:13px;opacity:.75;margin-top:6px;">
-如需交流或反馈问题，可通过以下方式联系
-</p>
-
-<a class="qq-group-btn" href="http://www.930.mom" target="_blank" rel="noopener">
+<a class="qq-group-btn" href="http://www.930.mom" target="_blank">
 学习交流群 / 联系方式
 </a>
 
+<!-- 手机提示弹窗 -->
 <div id="popupOverlay" class="popup-overlay">
     <div class="popup-content">
-        <h2>截图保存方便下次观看</h2>
-        <p>进不了本站时请更换浏览器，或更换地址地址访问即可！！！<br><br>
-        地址一:111ccc.cc 地址二:333ccc.cc<br>地址三:v6z.xyz</p>
-        <button id="popupCloseBtn" class="popup-close-btn">关闭</button>
+        <p>截图保存方便下次访问<br><br>地址一：111ccc.cc<br>地址二：333ccc.cc<br>地址三：v6z.xyz</p>
+        <button class="popup-close-btn" onclick="this.parentElement.parentElement.style.display='none'">关闭</button>
     </div>
 </div>
 
+<!-- ✅ 唯一保留的 Tawk.to 客服（不会冲突） -->
 <script>
-window.addEventListener('load', function(){
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function(){
+var s1 = document.createElement("script");
+s1.async = true;
+s1.src = 'https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
+s1.charset = 'UTF-8';
+s1.setAttribute('crossorigin','*');
+document.body.appendChild(s1);
+})();
+</script>
 
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    var s1 = document.createElement("script");
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    document.body.appendChild(s1);
-
-    /* ===== 关键：去掉欢迎页面，直接进入聊天 ===== */
-    Tawk_API.onLoad = function () {
-        Tawk_API.hideWidget();
-        if (window.innerWidth <= 768) {
-            setTimeout(function () {
-                Tawk_API.showWidget();
-                Tawk_API.maximize();
-            }, 300);
-        }
-    };
-
-    /* ===== 原弹窗逻辑 ===== */
-    const popupOverlay = document.getElementById('popupOverlay');
-    const popupCloseBtn = document.getElementById('popupCloseBtn');
-
-    function setCookie(name, value, days) {
-        const d = new Date();
-        d.setTime(d.getTime() + (days*24*60*60*1000));
-        document.cookie = name + "=" + value + ";path=/;expires=" + d.toUTCString();
-    }
-    function getCookie(name) {
-        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-        return match ? match[2] : null;
-    }
-
-    if(window.innerWidth > 768) return;
-    if(getCookie('popupShown') === 'true') return;
-
-    function openPopup() {
-        popupOverlay.style.display = 'flex';
-        setCookie('popupShown', 'true', 7);
-    }
-
-    popupCloseBtn.onclick = function(){
-        popupOverlay.style.display = 'none';
-    }
-
-    popupOverlay.onclick = function(e){
-        if(e.target === popupOverlay) popupOverlay.style.display = 'none';
-    }
-
-    setTimeout(openPopup, 2000);
-});
+<script>
+/* 手机弹窗：只显示一次 */
+if (window.innerWidth <= 768 && !document.cookie.includes('popupShown')) {
+    setTimeout(() => {
+        document.getElementById('popupOverlay').style.display = 'flex';
+        document.cookie = "popupShown=true;path=/;max-age=604800";
+    }, 2000);
+}
 </script>
 
 </body>
