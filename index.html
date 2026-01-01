@@ -1,203 +1,264 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每天都是元气满满的一天</title>
+<title>学习资料导航</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
-               "Helvetica Neue", Arial;
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOrIZpVL_lLWeyMY1J4q0fx9f2lw7RXQAC_iEAAnnVqFaxvnV_4-5AajgE.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
 }
 
 body {
-  height: 100vh;
-  background:
-    radial-gradient(circle at 85% 18%, #fff59d 0%, transparent 42%),
-    linear-gradient(135deg, #9ee7e1 0%, #d4ed8e 52%, #f7e65a 100%);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* ===== 右上角 1/4 纯色圆（最终版） ===== */
-.bg-circle {
-  position: fixed;
-
-  /* 圆心：白色顶部 + 屏幕右边形成的 90° 角 */
-  top: 48px;
-  right: 0;
-
-  /* 初始直径 */
-  width: 420px;
-  height: 420px;
-
-  border-radius: 50%;
-  background: #f6e35c;   /* ✅ 纯色 */
-
-  /* ⭐ 不要任何描边 / 阴影 / 渐变 */
-  box-shadow: none;
-
-  /* 精确对齐圆心 */
-  transform: translate(50%, -50%);
-
-  animation: circleRadius 16s ease-in-out infinite;
-  z-index: 0;
-  pointer-events: none;
+/* ===== 标题区域间距优化 ===== */
+h1 {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 36px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.6);
 }
 
-/* 半径伸缩（±半径的一半） */
-@keyframes circleRadius {
-  0% {
-    width: 420px;
-    height: 420px;
-  }
-  50% {
-    width: 520px;
-    height: 520px;
-  }
-  100% {
-    width: 420px;
-    height: 420px;
-  }
+.sub-text {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #fff3b0;
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
 }
 
-/* ===== 固定顶部标题 ===== */
-.top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  background: #fff;
-  text-align: center;
-  padding: 14px 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #000;
+.notice {
+    max-width: 880px;
+    margin: 4px auto 0;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: .88;
 }
 
-/* ===== 主体 ===== */
-.main {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 48px;
-  position: relative;
-  z-index: 1;
+/* ===== 按钮区域 ===== */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin: 24px auto 20px;
+    justify-content: center;
 }
 
-/* ===== 时间 / 按钮 / 小字 ===== */
-.stack {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-  gap: 140px;
+.button {
+    width: calc(50% - 10px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    opacity: .95;
+    box-sizing: border-box;
 }
 
-/* ===== 时间 ===== */
-.clock {
-  background: #fff;
-  padding: 22px 54px;
-  border-radius: 24px;
-  font-size: 48px;
-  font-weight: 700;
-  color: #111;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+.button:hover { opacity: 1; }
+
+.button1 { background: linear-gradient(135deg,#3f51ff,#7c4dff); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button2 { background: linear-gradient(135deg,#00c853,#64dd17); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button3 { background: linear-gradient(135deg,#ff9100,#ff6d00); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button4 { background: linear-gradient(135deg,#d500f9,#ff1744); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button5 { background: linear-gradient(135deg,#ffd600,#ffab00); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button6 { background: linear-gradient(135deg,#2b2b2b,#6a6a6a,#2b2b2b); box-shadow:0 0 8px rgba(255,255,255,.35);}
+
+/* ===== 联系方式按钮 ===== */
+.qq-group-btn {
+    margin: 20px auto 36px;
+    padding: 10px 24px;
+    background: rgba(18,183,245,0.9);
+    border-radius: 22px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
 }
 
-/* ===== 继续访问按钮 ===== */
-.btn {
-  padding: 20px 72px;
-  border-radius: 999px;
-  background: linear-gradient(135deg,
-    rgba(255,224,130,0.9),
-    rgba(255,167,38,0.9),
-    rgba(255,112,67,0.9)
-  );
-  color: rgba(255,255,255,0.95);
-  font-size: 22px;
-  font-weight: 500;
-  text-decoration: none;
-  animation: breathe 2.2s ease-in-out infinite;
+/* ===== 弹窗样式 ===== */
+.popup-overlay {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes breathe {
-  0% { opacity: 0.45; }
-  50% { opacity: 1; }
-  100% { opacity: 0.45; }
+.popup-content {
+    background: #fff;
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
 
-/* ===== 正能量小字 ===== */
-.quote {
-  background: #fff;
-  padding: 14px 28px;
-  border-radius: 20px;
-  font-size: 16px;
-  color: #111;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+.popup-content h2 {
+    margin-top: 0;
+    font-size: 24px;
 }
 
-/* ===== 底部留白 ===== */
-.bottom {
-  height: 52px;
-  background: #fff;
+.popup-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
 }
+
+.popup-close:hover { color: #333; }
+
+.popup-content button {
+    margin-top: 12px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #3f51ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.popup-content button:hover { background: #2c3e9f; }
 </style>
 </head>
 
 <body>
 
-<!-- 纯色 1/4 圆 -->
-<div class="bg-circle"></div>
+<div class="background"></div>
 
-<div class="top">
-  每天都是元气满满的一天
+<h1>学习资料导航</h1>
+
+<p class="sub-text">
+包天以上请妥善保存账号信息<br>
+避免学习进度丢失
+</p>
+
+<div class="notice">
+本站仅提供第三方学习资源的整理与导航，内容由外部站点提供。
 </div>
 
-<div class="main">
-  <div class="stack">
-    <div class="clock" id="clock">00:00:00</div>
+<div class="button-container">
 
-    <a class="btn" href="https://baidu.cn">
-      继续访问
-    </a>
+<a class="button button1" href="http://6e8e.cc" target="_blank" rel="noopener">学习站点2</a>
+<a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="noopener">学习站点1</a>
+<a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank" rel="noopener">学习站点4</a>
+<a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank" rel="noopener">学习站点3</a>
+<a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">免费学习资料</a>
+<a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="noopener">学习站点5</a>
 
-    <div class="quote" id="quote">
-      “做你害怕的事，直到你不再害怕它。”
+</div>
+
+<p style="font-size:13px;opacity:.75;margin-top:6px;">
+如需交流或反馈问题，可通过以下方式联系
+</p>
+
+<a class="qq-group-btn"
+   href="http://www.930.mom"
+   target="_blank"
+   rel="noopener">
+学习交流群 / 联系方式
+</a>
+
+<!-- ===== 弹窗 HTML ===== -->
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <span id="closePopup" class="popup-close">&times;</span>
+        <h2>温馨提示</h2>
+        <p>本站整理了丰富的学习资料，记得妥善保存账号信息。</p>
+        <button id="popupButton">立即查看免费资料</button>
     </div>
-  </div>
 </div>
 
-<div class="bottom"></div>
-
+<!-- 客服 JS 延迟加载 + 弹窗逻辑 -->
 <script>
-function updateClock() {
-  const now = new Date();
-  document.getElementById("clock").innerText =
-    now.toLocaleTimeString("zh-CN", { hour12: false });
-}
-updateClock();
-setInterval(updateClock, 1000);
+window.addEventListener('load', function(){
+    // 客服脚本
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    var s1 = document.createElement("script");
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    document.body.appendChild(s1);
 
-const quotes = [
-  "“做你害怕的事，直到你不再害怕它。”",
-  "“每天进步一点点。”",
-  "“慢慢来，也是答案。”",
-  "“今天也值得认真对待。”"
-];
+    // ===== 弹窗逻辑 =====
+    const popupOverlay = document.getElementById('popupOverlay');
+    const closePopup = document.getElementById('closePopup');
+    const popupButton = document.getElementById('popupButton');
 
-let i = 0;
-setInterval(() => {
-  i = (i + 1) % quotes.length;
-  document.getElementById("quote").innerText = quotes[i];
-}, 4000);
+    // 工具函数：操作 cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days*24*60*60*1000));
+        document.cookie = name + "=" + value + ";path=/;expires=" + d.toUTCString();
+    }
+
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+    }
+
+    // 只在手机端显示
+    const isMobile = window.innerWidth <= 768;
+    if(!isMobile) return;
+
+    // 只显示一次
+    if(getCookie('popupShown') === 'true') return;
+
+    function openPopup() {
+        popupOverlay.style.display = 'flex';
+        setCookie('popupShown', 'true', 7); // 7天内不再显示
+    }
+
+    closePopup.onclick = function() {
+        popupOverlay.style.display = 'none';
+    }
+
+    popupOverlay.onclick = function(e) {
+        if(e.target === popupOverlay){
+            popupOverlay.style.display = 'none';
+        }
+    }
+
+    popupButton.onclick = function() {
+        window.location.href = 'https://1busin-ebsoo-19cos.cyou';
+    }
+
+    // 延迟 2 秒弹出
+    setTimeout(openPopup, 2000);
+});
 </script>
 
 </body>
