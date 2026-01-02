@@ -1,139 +1,18 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>学习资料整理说明</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial;
-}
-body {
-  min-height: 100vh;
-  padding: 36px 18px;
-  background: linear-gradient(135deg, #9ee7e1 0%, #f7e65a 100%);
-}
-.container {
-  max-width: 420px;
-  margin: 0 auto;
-}
-h1 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-p {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.7;
-  margin-bottom: 14px;
-}
-.note {
-  font-size: 13px;
-  color: #666;
-  margin-top: 10px;
-}
-.links {
-  margin-top: 26px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(0,0,0,0.15);
-}
-.link-btn {
-  display: block;
-  text-align: center;
-  margin-bottom: 14px;
-  padding: 14px 0;
-  border-radius: 999px;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
-  background: linear-gradient(135deg, #ffd54f, #ffb300);
-}
-
-/* 弹窗样式 */
-.popup-overlay {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.5);
-  display: none; /* 初始隐藏 */
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-.popup-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 320px;
-  text-align: center;
-  position: relative;
-}
-.popup-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-.popup-content h2 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333;
-}
-.popup-close {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 18px;
-  cursor: pointer;
-  color: #666;
-}
-</style>
-</head>
-<body>
-<div class="container">
-
-  <h1>学习资料整理说明</h1>
-
-  <p>
-    本页面用于整理和说明部分学习相关资料的获取方式，
-    内容来源于公开网络，仅作为学习参考。
-  </p>
-
-  <p>
-    页面本身不提供下载或服务功能，以下链接为补充资料说明，
-    可根据个人需要自行选择是否访问。
-  </p>
-
-  <div class="links">
-    <a class="link-btn"
-       href="http://1.Mr79BrK9Yh.silusx.cn/2257/zl?code=Mr79BrK9Yh&x">
-       相关学习资料参考
-    </a>
-
-    <a class="link-btn"
-       href="http://hoZRzgCeJs.analyses.cn/?rcHnf&Ol=ertgrvjfmwordakabn">
-       课程内容补充说明
-    </a>
-  </div>
-
-  <div class="note">
-    提示：部分内容可能因网络或地区原因存在访问差异。
-  </div>
-
-</div>
-
 <!-- 弹窗 HTML -->
 <div class="popup-overlay" id="popup">
   <div class="popup-content">
     <span class="popup-close" id="popupClose">&times;</span>
     <h2>截图保存方便下次观看学习</h2>
-    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEPbeJpV5wEd8c2CQABYB3PnyrBnVhvOm4AAoEbAAIKZ8FWgCXv033D32k4BA.jpeg" alt="学习地址提示">
+    <!-- 小图片尺寸，居中显示 -->
+    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEPbeJpV5wEd8c2CQABYB3PnyrBnVhvOm4AAoEbAAIKZ8FWgCXv033D32k4BA.jpeg" 
+         alt="学习地址提示" 
+         style="width:180px; height:auto; margin:10px auto; display:block; border-radius:6px;">
     <p style="font-size:12px; color:#666; margin-top:6px;">仅供记录学习使用</p>
+    <!-- 底部关闭按钮 -->
+    <button id="popupCloseBtn" 
+            style="margin-top:12px; padding:6px 16px; font-size:14px; border:none; border-radius:6px; background:#ffb300; color:#fff; cursor:pointer;">
+      关闭
+    </button>
   </div>
 </div>
 
@@ -141,6 +20,7 @@ p {
 document.addEventListener('DOMContentLoaded', function() {
   const popup = document.getElementById('popup');
   const popupClose = document.getElementById('popupClose');
+  const popupCloseBtn = document.getElementById('popupCloseBtn');
 
   // 只显示一次
   if(!localStorage.getItem('popupShown')) {
@@ -148,11 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('popupShown', 'yes');
   }
 
-  // 点击关闭
+  // 点击右上角关闭
   popupClose.addEventListener('click', function() {
+    popup.style.display = 'none';
+  });
+
+  // 点击底部关闭按钮
+  popupCloseBtn.addEventListener('click', function() {
     popup.style.display = 'none';
   });
 });
 </script>
-</body>
-</html>
