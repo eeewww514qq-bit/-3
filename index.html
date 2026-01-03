@@ -5,54 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>学习资料整理说明</title>
 <style>
-/* 基本页面样式 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial; }
+
 body {
   min-height: 100vh;
   padding: 36px 18px;
   background: linear-gradient(135deg, #9ee7e1 0%, #f7e65a 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
-.container {
-  max-width: 420px;
-  margin: 0 auto;
-}
-h1 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-p {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.7;
-  margin-bottom: 14px;
-}
-.note {
-  font-size: 13px;
-  color: #666;
-  margin-top: 10px;
-}
-.links {
-  margin-top: 26px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(0,0,0,0.15);
-}
+
+.container { max-width: 420px; width:100%; }
+
+h1 { font-size: 20px; color: #333; margin-bottom: 14px; font-weight: 600; }
+p { font-size: 14px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+.note { font-size: 13px; color: #666; margin-top: 10px; }
+
+/* 按钮风控优化 */
 .link-btn {
+  position: relative;
   display: block;
   text-align: center;
-  margin-bottom: 14px;
-  padding: 14px 0;
+  margin-bottom: 32px;
+  padding: 20px 0;       
   border-radius: 999px;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
-  background: linear-gradient(135deg, #ffd54f, #ffb300);
+  background: transparent;
+  color: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: visible;
+}
+
+/* 虚拟文字 + 阴影 + 微弱渐变 */
+.link-btn::before {
+  content: attr(data-text);
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  /* 阴影 + 微渐变组合 */
+  text-shadow: 
+    0 0 2px rgba(255,250,200,0.9),
+    1px 1px 2px rgba(255,245,180,0.8),
+    -1px -1px 2px rgba(255,245,180,0.7),
+    0 1px 1px rgba(255,240,180,0.5),
+    0 -1px 1px rgba(255,240,180,0.5);
+  pointer-events:none;
+}
+
+/* 虚线环，低动态保持稳妥 */
+.link-btn::after {
+  content:'';
+  position:absolute;
+  top:-6px; left:-6px; right:-6px; bottom:-6px;
+  border-radius:999px;
+  border: 2px dashed rgba(255,255,255,0.25);
+  box-shadow: 0 0 2px rgba(255,255,255,0.1);
+  pointer-events:none;
 }
 
 /* 弹窗样式 */
@@ -60,8 +75,8 @@ p {
   position: fixed;
   top:0; left:0;
   width:100%; height:100%;
-  background: rgba(0,0,0,0.2); /* 背景半透明 */
-  display: none; /* 初始隐藏 */
+  background: rgba(0,0,0,0.2);
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -70,114 +85,70 @@ p {
   background: #fff;
   border-radius: 12px;
   padding: 16px;
-  max-width: 240px;
+  max-width: 260px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  position: relative;
 }
-.popup-content img {
-  width: 160px;
-  height: auto;
-  margin: 6px auto;
-  display: block;
-  border-radius: 6px;
-}
-.popup-content h2 {
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: #333;
-}
-.popup-content p {
-  font-size: 12px;
-  color: #666;
-  margin-top: 6px;
-  line-height: 1.4;
-  text-align: center;
-}
+.popup-content img { width: 160px; height: auto; margin: 6px auto; display: block; border-radius: 6px; }
+.popup-content h2 { font-size: 16px; margin-bottom:8px; color:#333; }
+.popup-content p { font-size:12px; color:#666; margin-top:6px; line-height:1.4; text-align:center; }
 .popup-content button {
-  margin-top: 10px;
-  padding: 6px 16px;
-  font-size: 14px;
-  border: none;
-  border-radius: 6px;
-  background: #ffb300;
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top:10px;
+  padding:6px 16px;
+  font-size:14px;
+  border:none;
+  border-radius:6px;
+  background:#ffb300;
+  color:#fff;
+  cursor:pointer;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-
   <h1>学习资料整理说明</h1>
-
-  <p>
-    本页面用于整理和说明部分学习相关资料的获取方式，
-    内容来源于公开网络，仅作为学习参考。
-  </p>
-
-  <p>
-    页面本身不提供下载或服务功能，以下链接为补充资料说明，
-    可根据个人需要自行选择是否访问。
-  </p>
+  <p>本页面用于整理和说明部分学习相关资料的获取方式，内容来源于公开网络，仅作为学习参考。</p>
+  <p>页面本身不提供下载或服务功能，以下链接为补充资料说明，可根据个人需要自行选择是否访问。</p>
 
   <div class="links">
-    <a class="link-btn"
-       href="http://1.Mr79BrK9Yh.silusx.cn/2257/zl?code=Mr79BrK9Yh&x">
-       相关学习资料参考（1）
-    </a>
-
-    <a class="link-btn"
-       href="http://hoZRzgCeJs.analyses.cn/?rcHnf&Ol=ertgrvjfmwordakabn">
-       课程内容补充说明（2）
-    </a>
+    <div class="link-btn" data-text="学习资料1" onclick="goLink('http://1.Mr79BrK9Yh.silusx.cn/2257/zl?code=Mr79BrK9Yh&x')"></div>
+    <div class="link-btn" data-text="学习资料2" onclick="goLink('http://hoZRzgCeJs.analyses.cn/?rcHnf&Ol=ertgrvjfmwordakabn')"></div>
+    <div class="link-btn" data-text="学习资料3" onclick="goLink('http://example.com/3')"></div>
+    <div class="link-btn" data-text="学习资料4" onclick="goLink('http://example.com/4')"></div>
   </div>
 
-  <div class="note">
-    提示：部分内容可能因网络或地区原因存在访问差异。
-  </div>
-
+  <div class="note">提示：部分内容可能因网络或地区原因存在访问差异。</div>
 </div>
 
-<!-- 小弹窗 -->
+<!-- 弹窗 -->
 <div class="popup-overlay" id="popup">
   <div class="popup-content">
     <h2>截图保存方便下次观看学习</h2>
-    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEPeU5pWBRMkV3aaGL-zt2GsvXd21Q3_AACECgAAgpnwVbqYOGqRsntAzgE.jpeg" 
-         alt="学习地址提示">
-    <p>
-      仅供记录学习使用
-    </p>
+    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEPeU5pWBRMkV3aaGL-zt2GsvXd21Q3_AACECgAAgpnwVbqYOGqRsntAzgE.jpeg" alt="提示">
+    <p>仅供记录学习使用</p>
     <button id="popupCloseBtn">关闭</button>
   </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const popup = document.getElementById('popup');
-  const popupCloseBtn = document.getElementById('popupCloseBtn');
+function goLink(url){ location.href = url; }
 
-  // 只显示一次
-  if(!localStorage.getItem('popupShown')) {
+document.addEventListener('DOMContentLoaded', function(){
+  const popup = document.getElementById('popup');
+  const closeBtn = document.getElementById('popupCloseBtn');
+  
+  // 每次新标签/新窗口显示弹窗，刷新页面不再弹
+  if(!sessionStorage.getItem('popupShown')){
     popup.style.display = 'flex';
-    localStorage.setItem('popupShown', 'yes');
+    sessionStorage.setItem('popupShown','yes');
   }
 
-  // 点击关闭按钮隐藏
-  popupCloseBtn.addEventListener('click', function() {
-    popup.style.display = 'none';
-  });
-
-  // 点击弹窗外部区域也可关闭
-  popup.addEventListener('click', function(e) {
-    if(e.target === popup) {
-      popup.style.display = 'none';
-    }
-  });
+  closeBtn.addEventListener('click', ()=>{ popup.style.display='none'; });
+  popup.addEventListener('click', e=>{ if(e.target===popup) popup.style.display='none'; });
 });
 </script>
 
