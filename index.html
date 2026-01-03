@@ -1,251 +1,105 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>学习资料导航</title>
 
 <style>
-html, body {
-    height: 100%;
-    margin: 0;
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+    background:#111;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial;
+    color:#fff;
 }
 
-.background {
-    position: fixed;
-    inset: 0;
-    background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOrIZpVL_lLWeyMY1J4q0fx9f2lw7RXQAC_iEAAnnVqFaxvnV_4-5AajgE.jpeg');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* ===== 背景（本地 WebP，秒开关键） ===== */
+.bg{
+    position:fixed;
+    inset:0;
+    background:#111 url("/bg.webp") center/cover no-repeat;
+    z-index:-1;
 }
 
-/* ===== 标题区域间距优化 ===== */
-h1 {
-    margin-top: 12px;
-    margin-bottom: 6px;
-    font-size: 36px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,.6);
+/* ===== 标题 ===== */
+h1{
+    margin-top:14px;
+    margin-bottom:6px;
+    font-size:32px;
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
 }
 
-.sub-text {
-    margin-top: 0;
-    margin-bottom: 8px;
-    color: #fff3b0;
-    font-size: 18px;
-    font-style: italic;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    text-shadow: 0 1px 3px rgba(0,0,0,.6);
+.sub{
+    font-size:15px;
+    line-height:1.5;
+    opacity:.9;
 }
 
-.notice {
-    max-width: 880px;
-    margin: 4px auto 0;
-    font-size: 14px;
-    line-height: 1.6;
-    opacity: .88;
+/* ===== 按钮 ===== */
+.btns{
+    width:100%;
+    max-width:460px;
+    margin-top:22px;
+    padding:0 14px;
+    box-sizing:border-box;
 }
 
-/* ===== 按钮区域 ===== */
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 900px;
-    width: 100%;
-    margin: 24px auto 20px;
-    justify-content: center;
+.btn{
+    display:block;
+    width:100%;
+    margin-bottom:14px;
+    padding:14px 0;
+    border-radius:12px;
+    font-size:18px;
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(135deg,#4f6cff,#8a6cff);
+    box-shadow:0 0 8px rgba(255,255,255,.25);
 }
 
-.button {
-    width: calc(50% - 10px);
-    padding: 15px 20px;
-    border-radius: 12px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-decoration: none;
-    opacity: .95;
-    box-sizing: border-box;
-}
+.btn.alt{background:linear-gradient(135deg,#00c853,#64dd17);}
+.btn.gray{background:linear-gradient(135deg,#444,#777);}
 
-.button:hover { opacity: 1; }
-
-.button1 { background: linear-gradient(135deg,#3f51ff,#7c4dff); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button2 { background: linear-gradient(135deg,#00c853,#64dd17); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button3 { background: linear-gradient(135deg,#ff9100,#ff6d00); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button4 { background: linear-gradient(135deg,#d500f9,#ff1744); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button5 { background: linear-gradient(135deg,#ffd600,#ffab00); box-shadow:0 0 8px rgba(255,255,255,.35);}
-.button6 { background: linear-gradient(135deg,#2b2b2b,#6a6a6a,#2b2b2b); box-shadow:0 0 8px rgba(255,255,255,.35);}
-
-/* ===== 联系方式按钮 ===== */
-.qq-group-btn {
-    margin: 20px auto 36px;
-    padding: 10px 24px;
-    background: rgba(18,183,245,0.9);
-    border-radius: 22px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,.3);
-}
-
-/* ===== 极简手机弹窗样式 ===== */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.popup-content {
-    background: #fff;
-    color: #333;
-    padding: 15px 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,.3);
-}
-
-.popup-content h2 {
-    margin: 0 0 8px 0;
-    font-size: 20px;
-}
-
-.popup-content p {
-    font-size: 14px;
-    line-height: 1.4;
-    margin: 0 0 12px 0;
-}
-
-.popup-close-btn {
-    padding: 10px 0;
-    width: 100%;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    background: #ccc;
-    color: #333;
-    cursor: pointer;
-}
-
-.popup-close-btn:hover {
-    background: #999;
+/* ===== 底部说明 ===== */
+.note{
+    margin-top:10px;
+    font-size:12px;
+    opacity:.7;
 }
 </style>
 </head>
 
 <body>
 
-<div class="background"></div>
+<div class="bg"></div>
 
 <h1>学习资料导航</h1>
-
-<p class="sub-text">
+<div class="sub">
 包天以上请妥善保存账号信息<br>
 避免学习进度丢失
-</p>
-
-<div class="notice">
-本站仅提供第三方学习资源的整理与导航，内容由外部站点提供。
 </div>
 
-<div class="button-container">
-
-<a class="button button1" href="http://6e8e.cc" target="_blank" rel="noopener">学习站点2</a>
-<a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="noopener">学习站点1</a>
-<a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank" rel="noopener">学习站点4</a>
-<a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank" rel="noopener">学习站点3</a>
-<a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">免费学习资料</a>
-<a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="noopener">学习站点5</a>
-
+<div class="btns">
+    <!-- 全部走中转页，不直连 -->
+    <a class="btn" href="/go.html?id=1">学习站点 1</a>
+    <a class="btn alt" href="/go.html?id=2">学习站点 2</a>
+    <a class="btn" href="/go.html?id=3">学习站点 3</a>
+    <a class="btn alt" href="/go.html?id=4">学习站点 4</a>
+    <a class="btn gray" href="/go.html?id=5">免费学习资料</a>
 </div>
 
-<p style="font-size:13px;opacity:.75;margin-top:6px;">
-如需交流或反馈问题，可通过以下方式联系
-</p>
-
-<a class="qq-group-btn"
-   href="http://www.930.mom"
-   target="_blank"
-   rel="noopener">
-学习交流群 / 联系方式
-</a>
-
-<!-- ===== 极简手机弹窗 HTML ===== -->
-<div id="popupOverlay" class="popup-overlay">
-    <div class="popup-content">
-        <h2>截图保存方便下次观看</h2>
-        <p>进不了本站时请更换浏览器，或更换地址访问即可！！！<br><br>
-        地址一111ccc.cc&nbsp;&nbsp;地址二333ccc.cc<br>
-        地址三v6z.xyz</p>
-        <button id="popupCloseBtn" class="popup-close-btn">关闭</button>
-    </div>
+<div class="note">
+本站仅提供第三方学习资源导航
 </div>
-
-<!-- 客服 JS 延迟加载 + 弹窗逻辑 -->
-<script>
-window.addEventListener('load', function(){
-    // 客服脚本
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    var s1 = document.createElement("script");
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    document.body.appendChild(s1);
-
-    // ===== 弹窗逻辑（新进弹，刷新不弹）=====
-    const popupOverlay = document.getElementById('popupOverlay');
-    const popupCloseBtn = document.getElementById('popupCloseBtn');
-
-    // 只在手机端显示
-    if (window.innerWidth > 768) return;
-
-    // 刷新不弹，新进入才弹
-    if (sessionStorage.getItem('popupShown') === 'true') return;
-
-    function openPopup() {
-        popupOverlay.style.display = 'flex';
-        sessionStorage.setItem('popupShown', 'true');
-    }
-
-    // 关闭按钮
-    popupCloseBtn.onclick = function(){
-        popupOverlay.style.display = 'none';
-    }
-
-    // 点击遮罩关闭
-    popupOverlay.onclick = function(e){
-        if(e.target === popupOverlay){
-            popupOverlay.style.display = 'none';
-        }
-    }
-
-    // 延迟 2 秒弹出
-    setTimeout(openPopup, 2000);
-});
-</script>
 
 </body>
 </html>
