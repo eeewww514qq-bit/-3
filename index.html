@@ -1,154 +1,249 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>学习资料整理说明</title>
+<title>学习资料导航</title>
+
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial; }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEOrIZpVL_lLWeyMY1J4q0fx9f2lw7RXQAC_iEAAnnVqFaxvnV_4-5AajgE.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
 
 body {
-  min-height: 100vh;
-  padding: 36px 18px;
-  background: linear-gradient(135deg, #9ee7e1 0%, #f7e65a 100%);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container { max-width: 420px; width:100%; }
-
-h1 { font-size: 20px; color: #333; margin-bottom: 14px; font-weight: 600; }
-p { font-size: 14px; color: #444; line-height: 1.7; margin-bottom: 14px; }
-.note { font-size: 13px; color: #666; margin-top: 10px; }
-
-/* 按钮风控优化 */
-.link-btn {
-  position: relative;
-  display: block;
-  text-align: center;
-  margin-bottom: 32px;
-  padding: 20px 0;       
-  border-radius: 999px;
-  background: transparent;
-  color: transparent;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  overflow: visible;
+/* ===== 标题区域间距优化 ===== */
+h1 {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 36px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.6);
 }
 
-/* 虚拟文字 + 阴影 + 微弱渐变 */
-.link-btn::before {
-  content: attr(data-text);
-  position:absolute;
-  top:0; left:0; right:0; bottom:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color: transparent;
-  font-size: 18px;
-  font-weight: 600;
-  /* 阴影 + 微渐变组合 */
-  text-shadow: 
-    0 0 2px rgba(255,250,200,0.9),
-    1px 1px 2px rgba(255,245,180,0.8),
-    -1px -1px 2px rgba(255,245,180,0.7),
-    0 1px 1px rgba(255,240,180,0.5),
-    0 -1px 1px rgba(255,240,180,0.5);
-  pointer-events:none;
+.sub-text {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #fff3b0;
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0,0,0,.6);
 }
 
-/* 虚线环，低动态保持稳妥 */
-.link-btn::after {
-  content:'';
-  position:absolute;
-  top:-6px; left:-6px; right:-6px; bottom:-6px;
-  border-radius:999px;
-  border: 2px dashed rgba(255,255,255,0.25);
-  box-shadow: 0 0 2px rgba(255,255,255,0.1);
-  pointer-events:none;
+.notice {
+    max-width: 880px;
+    margin: 4px auto 0;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: .88;
 }
 
-/* 弹窗样式 */
+/* ===== 按钮区域 ===== */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin: 24px auto 20px;
+    justify-content: center;
+}
+
+.button {
+    width: calc(50% - 10px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    opacity: .95;
+    box-sizing: border-box;
+}
+
+.button:hover { opacity: 1; }
+
+.button1 { background: linear-gradient(135deg,#3f51ff,#7c4dff); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button2 { background: linear-gradient(135deg,#00c853,#64dd17); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button3 { background: linear-gradient(135deg,#ff9100,#ff6d00); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button4 { background: linear-gradient(135deg,#d500f9,#ff1744); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button5 { background: linear-gradient(135deg,#ffd600,#ffab00); box-shadow:0 0 8px rgba(255,255,255,.35);}
+.button6 { background: linear-gradient(135deg,#2b2b2b,#6a6a6a,#2b2b2b); box-shadow:0 0 8px rgba(255,255,255,.35);}
+
+/* ===== 联系方式按钮 ===== */
+.qq-group-btn {
+    margin: 20px auto 36px;
+    padding: 10px 24px;
+    background: rgba(18,183,245,0.9);
+    border-radius: 22px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+
+/* ===== 极简手机弹窗样式 ===== */
 .popup-overlay {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.2);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
+
 .popup-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  max-width: 260px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: #fff;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
-.popup-content img { width: 160px; height: auto; margin: 6px auto; display: block; border-radius: 6px; }
-.popup-content h2 { font-size: 16px; margin-bottom:8px; color:#333; }
-.popup-content p { font-size:12px; color:#666; margin-top:6px; line-height:1.4; text-align:center; }
-.popup-content button {
-  margin-top:10px;
-  padding:6px 16px;
-  font-size:14px;
-  border:none;
-  border-radius:6px;
-  background:#ffb300;
-  color:#fff;
-  cursor:pointer;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+
+.popup-content h2 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+}
+
+.popup-content p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+}
+
+.popup-close-btn {
+    padding: 10px 0;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #ccc;
+    color: #333;
+    cursor: pointer;
+}
+
+.popup-close-btn:hover {
+    background: #999;
 }
 </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>学习资料整理说明</h1>
-  <p>本页面用于整理和说明部分学习相关资料的获取方式，内容来源于公开网络，仅作为学习参考。</p>
-  <p>页面本身不提供下载或服务功能，以下链接为补充资料说明，可根据个人需要自行选择是否访问。</p>
+<div class="background"></div>
 
-  <div class="links">
-    <div class="link-btn" data-text="学习资料1" onclick="goLink('http://1.Mr79BrK9Yh.silusx.cn/2257/zl?code=Mr79BrK9Yh&x')"></div>
-    <div class="link-btn" data-text="学习资料2" onclick="goLink('http://hoZRzgCeJs.analyses.cn/?rcHnf&Ol=ertgrvjfmwordakabn')"></div>
-    <div class="link-btn" data-text="学习资料3" onclick="goLink('http://example.com/3')"></div>
-    <div class="link-btn" data-text="学习资料4" onclick="goLink('http://example.com/4')"></div>
-  </div>
+<h1>学习资料导航</h1>
 
-  <div class="note">提示：部分内容可能因网络或地区原因存在访问差异。</div>
+<p class="sub-text">
+包天以上请妥善保存账号信息<br>
+避免学习进度丢失
+</p>
+
+<div class="notice">
+本站仅提供第三方学习资源的整理与导航，内容由外部站点提供。
 </div>
 
-<!-- 弹窗 -->
-<div class="popup-overlay" id="popup">
-  <div class="popup-content">
-    <h2>截图保存方便下次观看学习</h2>
-    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEPeU5pWBRMkV3aaGL-zt2GsvXd21Q3_AACECgAAgpnwVbqYOGqRsntAzgE.jpeg" alt="提示">
-    <p>仅供记录学习使用</p>
-    <button id="popupCloseBtn">关闭</button>
-  </div>
+<div class="button-container">
+
+<a class="button button1" href="http://6e8e.cc" target="_blank" rel="noopener">学习站点2</a>
+<a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="noopener">学习站点1</a>
+<a class="button button3" href="http://g62k.ridxrcm.cn/?Oid=c2Rtcmkwbm4" target="_blank" rel="noopener">学习站点4</a>
+<a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu" target="_blank" rel="noopener">学习站点3</a>
+<a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">免费学习资料</a>
+<a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="noopener">学习站点5</a>
+
 </div>
 
+<p style="font-size:13px;opacity:.75;margin-top:6px;">
+如需交流或反馈问题，可通过以下方式联系
+</p>
+
+<a class="qq-group-btn"
+   href="http://www.930.mom"
+   target="_blank"
+   rel="noopener">
+学习交流群 / 联系方式
+</a>
+
+<!-- ===== 极简手机弹窗 HTML ===== -->
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <h2>截图保存方便下次观看</h2>
+        <p>进不了本站时请更换浏览器，或更换地址访问即可！！！<br><br>
+        地址一111ccc.cc&nbsp;&nbsp;地址二333ccc.cc<br>
+        地址三v6z.xyz</p>
+        <button id="popupCloseBtn" class="popup-close-btn">关闭</button>
+    </div>
+</div>
+
+<!-- 客服 JS 延迟加载 + 弹窗逻辑 -->
 <script>
-function goLink(url){ location.href = url; }
+window.addEventListener('load', function(){
+    // 客服脚本
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    var s1 = document.createElement("script");
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/693ed8f9e13f1e197a0d91cb/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    document.body.appendChild(s1);
 
-document.addEventListener('DOMContentLoaded', function(){
-  const popup = document.getElementById('popup');
-  const closeBtn = document.getElementById('popupCloseBtn');
-  
-  // 每次新标签/新窗口显示弹窗，刷新页面不再弹
-  if(!sessionStorage.getItem('popupShown')){
-    popup.style.display = 'flex';
-    sessionStorage.setItem('popupShown','yes');
-  }
+    // ===== 弹窗逻辑（新进弹，刷新不弹）=====
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupCloseBtn = document.getElementById('popupCloseBtn');
 
-  closeBtn.addEventListener('click', ()=>{ popup.style.display='none'; });
-  popup.addEventListener('click', e=>{ if(e.target===popup) popup.style.display='none'; });
+    // 只在手机端显示
+    if (window.innerWidth > 768) return;
+
+    // 刷新不弹，新进入才弹
+    if (sessionStorage.getItem('popupShown') === 'true') return;
+
+    function openPopup() {
+        popupOverlay.style.display = 'flex';
+        sessionStorage.setItem('popupShown', 'true');
+    }
+
+    // 关闭按钮
+    popupCloseBtn.onclick = function(){
+        popupOverlay.style.display = 'none';
+    }
+
+    // 点击遮罩关闭
+    popupOverlay.onclick = function(e){
+        if(e.target === popupOverlay){
+            popupOverlay.style.display = 'none';
+        }
+    }
+
+    // 延迟 2 秒弹出
+    setTimeout(openPopup, 2000);
 });
 </script>
 
