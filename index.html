@@ -2,107 +2,178 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>学习资料导航</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习资料索引</title>
 
 <style>
-html,body{
-    margin:0;
-    padding:0;
-    height:100%;
-    background:#111;
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial;
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background: #111 url("/beijintu/bg_2025.webp") center/cover no-repeat;
+    z-index: -1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overscroll-behavior: contain;
+}
+
+h1 {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 36px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.6);
+}
+
+.sub-text {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    letter-spacing: .5px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin: 24px auto 36px;
+    justify-content: center;
+}
+
+.button {
+    width: calc(50% - 10px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    opacity: .95;
+    box-sizing: border-box;
+}
+
+.button:hover { opacity: 1; }
+
+.button1 { background:#ADD8E6; box-shadow:0 0 8px rgba(255,255,255,.35); color:#000; }
+.button2 {
+    background-image: linear-gradient(135deg,#4B4B4B,#6B6B6B);
+    box-shadow:0 0 8px rgba(255,255,255,.35);
     color:#fff;
 }
+.button3 { background:#6A5ACD; box-shadow:0 0 8px rgba(255,255,255,.35); color:#fff; }
+.button4 { background:#D2691E; box-shadow:0 0 8px rgba(255,255,255,.35); color:#fff; }
+.button5 { background:#DAA520; box-shadow:0 0 8px rgba(255,255,255,.35); color:#000; }
+.button6 { background:#7B68EE; box-shadow:0 0 8px rgba(255,255,255,.35); color:#fff; }
 
-body{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
-/* ===== 背景（本地 WebP，秒开关键） ===== */
-.bg{
-    position:fixed;
-    inset:0;
-    background:#111 url("/bg.webp") center/cover no-repeat;
-    z-index:-1;
+.popup-content {
+    background: #fff;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
 }
 
-/* ===== 标题 ===== */
-h1{
-    margin-top:14px;
-    margin-bottom:6px;
-    font-size:32px;
-    text-shadow:0 2px 6px rgba(0,0,0,.6);
+.popup-content h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
 }
 
-.sub{
-    font-size:15px;
-    line-height:1.5;
-    opacity:.9;
+.popup-content p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 12px;
 }
 
-/* ===== 按钮 ===== */
-.btns{
-    width:100%;
-    max-width:460px;
-    margin-top:22px;
-    padding:0 14px;
-    box-sizing:border-box;
-}
-
-.btn{
-    display:block;
-    width:100%;
-    margin-bottom:14px;
-    padding:14px 0;
-    border-radius:12px;
-    font-size:18px;
-    color:#fff;
-    text-decoration:none;
-    background:linear-gradient(135deg,#4f6cff,#8a6cff);
-    box-shadow:0 0 8px rgba(255,255,255,.25);
-}
-
-.btn.alt{background:linear-gradient(135deg,#00c853,#64dd17);}
-.btn.gray{background:linear-gradient(135deg,#444,#777);}
-
-/* ===== 底部说明 ===== */
-.note{
-    margin-top:10px;
-    font-size:12px;
-    opacity:.7;
+.popup-close-btn {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #ccc;
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
+<div class="background"></div>
 
-<h1>学习资料导航</h1>
-<div class="sub">
-包天以上请妥善保存账号信息<br>
-避免学习进度丢失
+<h1>学习资料索引</h1>
+
+<p class="sub-text">
+本页面仅作信息整理与展示<br>
+内容来源于公开网络
+</p>
+
+<div class="button-container">
+    <a class="button button1" href="http://sujvf0nn.544u.cc">学习站点4</a>
+    <a class="button button2" https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75">学习站点5</a>
+    <a class="button button3" href="http://6e8e.cc"noopener">学习站点2</a>
+    <a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu">学习站点3</a>
+    <a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">勉费资料</a>
+    <a class="button button6" href="href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh" target="_blank" rel="nofollow noopener noreferrer">学习站点1</a>
 </div>
 
-<div class="btns">
-    <!-- 全部走中转页，不直连 -->
-    <a class="btn" href="/go.html?id=1">学习站点 1</a>
-    <a class="btn alt" href="/go.html?id=2">学习站点 2</a>
-    <a class="btn" href="/go.html?id=3">学习站点 3</a>
-    <a class="btn alt" href="/go.html?id=4">学习站点 4</a>
-    <a class="btn gray" href="/go.html?id=5">免费学习资料</a>
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <p style="font-size:12px;color:#888;margin-bottom:6px;">系统提示</p>
+        <h2>截图保存方便下次观看</h2>
+        <p>
+            包天以上请保存口令或注册账号使用<br>
+            注册及查口令入口：已购买、账号、vip专区<br><br>
+            进不了本站时更换浏览器或更换地址访问即可<br><br>
+            永久↓地址<br><br>
+            地址一 111ccc.cc&nbsp;&nbsp;地址二 333ccc.cc<br><br>
+            地址三 v6z.xyz&nbsp;&nbsp;地址四 p38.me
+        </p>
+        <button class="popup-close-btn"
+            onclick="this.closest('.popup-overlay').style.display='none'">
+            关闭
+        </button>
+    </div>
 </div>
 
-<div class="note">
-本站仅提供第三方学习资源导航
-</div>
-
-<!-- ===== 客服代码（已替换） ===== -->
-<script src="https://w1022.ttkefu.com/k/?fid=1J9BJF1" charset="utf-8"></script>
+<script>
+window.addEventListener('load', function(){
+    if (window.innerWidth <= 768 && !sessionStorage.getItem('popupShown')) {
+        setTimeout(function(){
+            document.getElementById('popupOverlay').style.display = 'flex';
+            sessionStorage.setItem('popupShown','true');
+        }, 1800);
+    }
+});
+</script>
 
 </body>
 </html>
