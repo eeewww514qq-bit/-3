@@ -201,6 +201,7 @@ window.addEventListener('load', function(){
         }, 1800);
     }
 });
+
 // ====== 客服按钮逻辑 ======
 const chatBtn = document.getElementById("chatBtn");
 const chatBox = document.getElementById("chatBox");
@@ -208,6 +209,13 @@ const chatBox = document.getElementById("chatBox");
 chatBtn.onclick = () => {
   chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
 };
+
+// ====== 接收关闭命令 ======
+window.addEventListener("message", function(event){
+  if(event.data && event.data.action === "closeChat"){
+    chatBox.style.display = "none";
+  }
+});
 </script>
 
 </body>
