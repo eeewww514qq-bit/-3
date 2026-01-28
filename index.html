@@ -16,14 +16,12 @@ body {
     padding: 20px;
 }
 
-/* 上方文字 */
 .info-text {
     text-align: center;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
-/* 视频播放器 */
 video {
     width: 90%;
     max-width: 640px;
@@ -33,16 +31,14 @@ video {
     margin-bottom: 15px;
 }
 
-/* 按钮容器 */
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 10px; /* 按钮间距 */
+    gap: 10px;
     flex-wrap: wrap;
     margin-top: 10px;
 }
 
-/* 按钮样式 */
 .button-container button {
     padding: 10px 15px;
     font-size: 14px;
@@ -69,30 +65,51 @@ video {
 
 <!-- 视频播放器 -->
 <video id="videoPlayer" controls>
-    <source src="your-video.mp4" type="video/mp4">
+    <source src="" type="video/mp4">
     你的浏览器不支持视频播放。
 </video>
 
 <!-- 按钮 -->
 <div class="button-container">
     <button id="changeVideo">换一部视频</button>
-    <button id="shareButton" data-link="https://example.com/share">分享给朋友</button>
+    <button id="shareButton">分享给朋友</button>
     <button id="external1" onclick="window.open('https://example.com/external1','_blank')">外部链接</button>
     <button id="external2" onclick="window.open('https://example.com/external2','_blank')">外部链接</button>
 </div>
 
 <script>
-// 换一部视频示例
-document.getElementById('changeVideo').addEventListener('click', function() {
-    const video = document.getElementById('videoPlayer');
-    // 这里可以改成随机或下一部视频的URL
-    video.src = 'another-video.mp4';
-    video.play();
-});
+// 10 个外部视频链接
+const videoList = [
+    'https://eppphh.hhphxz.com/20220630/ola8Y6p4/index.m3u8',
+    'https://djfdsu.hhphxz.com/20230326/7Ms4QYSd/index.m3u8',
+    'https://djfdsu.hhphxz.com/20231116/HGpoa5yv/index.m3u8',
+    'https://djfdsu.hhphxz.com/20231012/P5UgHhwL/index.m3u8',
+    'https://djfdsu.hhphxz.com/20231003/9Sw8fRHK/index.m3u8',
+    'https://djfdsu.hhphxz.com/20231003/9Sw8fRHK/index.m3u8',
+    'https://djfdsu.hhphxz.com/20231001/FOh0NifN/index.m3u8',
+    'https://djfdsu.hhphxz.com/20230204/X1cORGQB/index.m3u8',
+    'https://djfdsu.hhphxz.com/20231005/XXSipJM8/index.m3u8',
+    'https://eppphh.hhphxz.com/20210306/PGZSFS0E/index.m3u8'
+];
 
-// 分享按钮复制链接
+const videoPlayer = document.getElementById('videoPlayer');
+
+// 随机播放一个视频
+function playRandomVideo() {
+    const index = Math.floor(Math.random() * videoList.length);
+    videoPlayer.src = videoList[index];
+    videoPlayer.play();
+}
+
+// 初始化播放第一个视频
+videoPlayer.src = videoList[0];
+
+// 换一部视频按钮
+document.getElementById('changeVideo').addEventListener('click', playRandomVideo);
+
+// 分享按钮复制当前视频链接
 document.getElementById('shareButton').addEventListener('click', function() {
-    const link = this.getAttribute('data-link');
+    const link = videoPlayer.src;
     navigator.clipboard.writeText(link).then(() => {
         alert('已复制到剪贴板：' + link);
     }).catch(err => {
