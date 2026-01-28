@@ -3,218 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>学习资料索引</title>
-
+<title>视频播放页面</title>
 <style>
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.background {
-    position: fixed;
-    inset: 0;
-    background: #111 url("/beijintu/bg_2025.webp") center/cover no-repeat;
-    z-index: -1;
-}
-
 body {
     font-family: Arial, sans-serif;
+    background: #111;
     color: #fff;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overscroll-behavior: contain;
+    margin: 0;
+    padding: 20px;
 }
 
-h1 {
-    margin-top: 12px;
-    margin-bottom: 6px;
-    font-size: 36px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,.6);
+/* 上方文字 */
+.info-text {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-.sub-text {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.5;
-    letter-spacing: .5px;
+/* 视频播放器 */
+video {
+    width: 90%;
+    max-width: 640px;
+    height: auto;
+    border: 2px solid #444;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
+/* 按钮容器 */
 .button-container {
     display: flex;
+    justify-content: center;
+    gap: 10px; /* 按钮间距 */
     flex-wrap: wrap;
-    gap: 20px;
-    max-width: 900px;
-    width: 100%;
-    margin: 24px auto 36px;
-    justify-content: center;
+    margin-top: 10px;
 }
 
-.button {
-    width: calc(50% - 10px);
-    padding: 15px 20px;
-    border-radius: 12px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-decoration: none;
-    opacity: .95;
-    box-sizing: border-box;
-}
-
-.button:hover { opacity: 1; }
-
-.button1 { background:#6A5ACD; box-shadow:0 0 8px rgba(255,255,255,.35); color:#fff; }
-.button2 { background:#7B68EE; box-shadow:0 0 8px rgba(255,255,255,.35); color:#fff; }
-.button3 { background:#ADD8E6; box-shadow:0 0 8px rgba(255,255,255,.35); color:#000; }
-.button4 { background:#D2691E; box-shadow:0 0 8px rgba(255,255,255,.35); color:#fff; }
-.button5 { background:#DAA520; box-shadow:0 0 8px rgba(255,255,255,.35); color:#000; }
-.button6 {
-    background-image: linear-gradient(135deg,#4B4B4B,#6B6B6B);
-    box-shadow:0 0 8px rgba(255,255,255,.35);
-    color:#fff;
-}
-
-.popup-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-.popup-content {
-    background: #fff;
-    color: #333;
-    padding: 15px 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 300px;
-    text-align: center;
-}
-
-.popup-content h2 {
-    margin: 0 0 8px;
-    font-size: 20px;
-}
-
-.popup-content p {
+/* 按钮样式 */
+.button-container button {
+    padding: 10px 15px;
     font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    transition: background 0.3s;
 }
 
-.popup-close-btn {
-    width: 100%;
-    padding: 10px 0;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    background: #ccc;
+.button-container button:hover {
+    background-color: #555;
 }
 </style>
 </head>
-
 <body>
 
-<div class="background"></div>
+<!-- 上方文字 -->
+<div class="info-text">
+    <div>分享一人看两部</div>
+    <div>当前可刷新次数：<span id="refresh-count">3</span>次</div>
+</div>
 
-<h1>学习资料索引</h1>
+<!-- 视频播放器 -->
+<video id="videoPlayer" controls>
+    <source src="your-video.mp4" type="video/mp4">
+    你的浏览器不支持视频播放。
+</video>
 
-<p class="sub-text">
-本页面仅作信息整理与展示<br>
-内容来源于公开网络
-</p>
-
+<!-- 按钮 -->
 <div class="button-container">
-    <a class="button button1" href="http://6e8e.cc">学习站点2</a>
-    <a class="button button2" href="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh">学习站点1</a>
-    <a class="button button3" href="http://sujvf0nn.544u.cc"noopener">学习站点4</a>
-    <a class="button button4" href="http://IjaMWExiyP.e.haijiacp.com/?NXVsb&La=fqhjjqxcicvsqtddnu">学习站点3</a>
-    <a class="button button5" href="https://1busin-ebsoo-19cos.cyou" target="_blank" rel="noopener">勉费资料</a>
-    <a class="button button6" href="https://cdn.auoktalk.com/1765305207_9a98847a3077bb8d026152b20018639f?code=ufbq75" target="_blank" rel="nofollow noopener noreferrer">学习站点5</a>
+    <button id="changeVideo">换一部视频</button>
+    <button id="shareButton" data-link="https://example.com/share">分享给朋友</button>
+    <button id="external1" onclick="window.open('https://example.com/external1','_blank')">外部链接</button>
+    <button id="external2" onclick="window.open('https://example.com/external2','_blank')">外部链接</button>
 </div>
 
-<div id="popupOverlay" class="popup-overlay">
-    <div class="popup-content">
-        <p style="font-size:12px;color:#888;margin-bottom:6px;">系统提示</p>
-        <h2>截图保存方便下次观看</h2>
-        <p>
-            包天以上请保存口令或注册账号使用<br>
-            注册及查口令入口：已购买、账号、vip专区<br><br>
-            进不了本站时更换浏览器或更换地址访问即可<br><br>
-            永久↓地址<br><br>
-            地址一 111ccc.cc&nbsp;&nbsp;地址二 333ccc.cc<br><br>
-            地址三 v6z.xyz&nbsp;&nbsp;地址四 p38.me
-        </p>
-        <button class="popup-close-btn"
-            onclick="this.closest('.popup-overlay').style.display='none'">
-            关闭
-        </button>
-    </div>
-</div>
-<!-- ====== 客服按钮 & 弹窗 ====== -->
-<button id="chatBtn" style="
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background:#4f6cff;
-  color:#fff;
-  border:none;
-  font-size:24px;
-  cursor:pointer;
-  z-index:9999;
-  touch-action: manipulation;
-">💬</button>
-
-<div id="chatBox" style="
-  display:none;
-  position: fixed;
-  right: 16px;
-  bottom: 80px;
-  width: 360px;
-  height: 480px;
-  border: 1px solid #ddd;
-  background:#fff;
-  z-index:9999;
-">
-  <iframe id="chatFrame" src="https://www.3bsfyi-gdhin-21ndk.cyou/test.html" style="width:100%; height:100%; border:none;"></iframe>
-</div>
 <script>
-window.addEventListener('load', function(){
-    if (window.innerWidth <= 768 && !sessionStorage.getItem('popupShown')) {
-        setTimeout(function(){
-            document.getElementById('popupOverlay').style.display = 'flex';
-            sessionStorage.setItem('popupShown','true');
-        }, 1800);
-    }
+// 换一部视频示例
+document.getElementById('changeVideo').addEventListener('click', function() {
+    const video = document.getElementById('videoPlayer');
+    // 这里可以改成随机或下一部视频的URL
+    video.src = 'another-video.mp4';
+    video.play();
 });
 
-// ====== 客服按钮逻辑 ======
-const chatBtn = document.getElementById("chatBtn");
-const chatBox = document.getElementById("chatBox");
-
-chatBtn.onclick = () => {
-  chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
-};
-
-// ====== 接收关闭命令 ======
-window.addEventListener("message", function(event){
-  if(event.data && event.data.action === "closeChat"){
-    chatBox.style.display = "none";
-  }
+// 分享按钮复制链接
+document.getElementById('shareButton').addEventListener('click', function() {
+    const link = this.getAttribute('data-link');
+    navigator.clipboard.writeText(link).then(() => {
+        alert('已复制到剪贴板：' + link);
+    }).catch(err => {
+        alert('复制失败，请手动复制链接');
+        console.error(err);
+    });
 });
 </script>
 
